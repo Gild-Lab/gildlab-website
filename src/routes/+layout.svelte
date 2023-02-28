@@ -1,5 +1,10 @@
 <script>
     import "../app.css";
+    import {page} from '$app/stores';
+
+    let path;
+
+    $: path = $page.url.pathname;
 </script>
 <div class="header">
   <div class="logo">
@@ -50,9 +55,9 @@
     <span>We are a software provider for ESG assets.</span>
   </div>
   <div class="navigation">
-    <a class="nav-item" href="/manual">Manual</a>
-    <a class="nav-item" href="/whitepapers">Whitepapers</a>
-    <a class="nav-item" href="/terms">Terms</a>
+    <a class="nav-item" class:active={path==='/manual'} href="/manual">Manual</a>
+    <a class="nav-item" class:active={path==='/whitepapers'} href="/whitepapers">Whitepapers</a>
+    <a class="nav-item" class:active={path==='/terms'} href="/terms">Terms</a>
   </div>
 
 </div>
@@ -95,5 +100,10 @@
 
     .nav-item:hover {
         border-bottom: 6px solid #DCDCDC;
+    }
+
+    .navigation .active {
+        border-bottom: 6px solid #E8AF55;
+
     }
 </style>
