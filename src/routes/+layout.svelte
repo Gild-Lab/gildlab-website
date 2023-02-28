@@ -51,13 +51,13 @@
     </a>
   </div>
   <div class="header-text">
-    <span class="welcome">Welcome to Gild Lab</span>
+    <span class="fw-700">Welcome to Gild Lab</span>
     <span>We are a software provider for ESG assets.</span>
   </div>
   <div class="navigation">
-    <a class="nav-item" class:active={path==='/manual'} href="/manual">Manual</a>
-    <a class="nav-item" class:active={path==='/whitepapers'} href="/whitepapers">Whitepapers</a>
-    <a class="nav-item" class:active={path==='/terms'} href="/terms">Terms</a>
+    <a class="nav-item fw-700" class:active={path==='/manual'} href="/manual">Manual</a>
+    <a class="nav-item fw-700" class:active={path==='/whitepapers'} href="/whitepapers">Whitepapers</a>
+    <a class="nav-item fw-700" class:active={path==='/terms'} href="/terms">Terms</a>
   </div>
 
 </div>
@@ -67,6 +67,7 @@
 
 <style>
     @import url("https://use.typekit.net/fmp1hyo.css");
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
 
     .header {
         display: flex;
@@ -89,12 +90,7 @@
         font-size: 20px;
     }
 
-    .welcome {
-        font-weight: 700;
-    }
-
     .nav-item {
-        font-weight: 700;
         font-size: 20px
     }
 
@@ -104,6 +100,5 @@
 
     .navigation .active {
         border-bottom: 6px solid #E8AF55;
-
     }
 </style>

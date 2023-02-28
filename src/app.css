@@ -1,3 +1,10 @@
 body {
   font-family: 'courier-std', monospace;
+  margin: 0;
+}
+.fw-400{
+  font-weight: 400 ;
+}
+.fw-700{
+  font-weight: 700 ;
 }
