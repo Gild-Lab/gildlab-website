@@ -5,9 +5,8 @@
 <div class="content">
   <img src={image} alt="gild lab"/>
   <div class="info">
-    <div class="what-we-do">
+    <div class="what-we-do segment">
       <span class="fw-700 title"> What we do </span>
-
       <div class="text">
         <p>
           Gild Lab is the infrastructure provider for Semi-Fungible System users who want hosted infrastructure.
@@ -43,6 +42,50 @@
         </p>
       </div>
     </div>
+    <div class="how-does-it-work segment">
+      <span class="fw-700 title">How does it work? </span>
+      <div class="text">
+        <p>If a public transparent layer was added to companies, accountability would trend.
+        </p>
+        <p>
+
+
+          The underlying asset e.g. a particular warehouse is represented with a Non-Fungible Token. A common property
+          across all underlying assets e.g. income from all warehouses is represented with a Fungible Token, because it
+          is shared.
+
+        <p>Asset holders receive the Non-Fungible Token and sell the Fungible Token; retail, institutional investors buy
+          the Fungible Token. Rewards earned are distributed to holders.
+        </p>
+        <p>Assets represent a closed ecosystem e.g. UK vaulted gold only, where there are no toxic assets that devalue
+          the entire system. Assets e.g. UK vaulted gold, vs Swiss vaulted gold can be traded / arbitraged as well as
+          linked in baskets.
+        </p>
+        <p>
+          <span class="fw-700">Email David at david@gildlab.xyz</span> if you would like to use the Semi-Fungible
+          System.
+        </p>
+      </div>
+    </div>
+    <div class="contact segment">
+      <span class="fw-700 title">Contact Gild Labs.</span>
+      <div class="text">
+        <p><span class="fw-700">Email</span> david@gildlab.xyz
+        </p>
+        <p>
+          <span class="fw-700">Business address</span>
+        <div>GILD LAB LIMITED
+        </div>
+        <div>Company number 13684709
+        </div>
+        <div>
+          71-75 Shelton Street, Covent Garden, London, United Kingdom, WC2H 9JQ
+        </div>
+      </div>
+    </div>
+    <div class="copyright segment">
+      <div class="text">Copyright © 2023 GildLab. All Rights Reserved</div>
+    </div>
   </div>
 </div>
 
@@ -52,25 +95,36 @@
         width: 100%;
     }
 
-    .info {
-        margin-top: 50px;
-    }
-
     img {
         width: 100%;
     }
 
-    .what-we-do {
-        border-left: 60px solid #A7CACC;
+    .segment{
+        margin-top: 75px;
         padding: 80px 345px 100px 180px;
         line-height: 34px;
     }
 
-    .what-we-do .title {
+    .what-we-do {
+        border-left: 60px solid #A7CACC;
+    }
+    .how-does-it-work {
+        border-left: 60px solid #95190C;
+    }
+
+    .contact {
+        border-left: 60px solid #9FA074;
+    }
+
+    .copyright {
+        border-left: 60px solid #D9D093;
+    }
+
+    .title {
         font-size: 30px;
     }
 
-    .what-we-do .text {
+    .text {
         font-family: 'Noto Sans JP', sans-serif;
         font-size: 20px;
     }
