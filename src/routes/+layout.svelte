@@ -1,3 +1,6 @@
+<script>
+    import "../app.css";
+</script>
 <div class="header">
   <div class="logo">
     <a class="" href="/">
@@ -43,13 +46,13 @@
     </a>
   </div>
   <div class="header-text">
-    <span><b>Welcome to Gild Lab</b></span>
+    <span class="welcome">Welcome to Gild Lab</span>
     <span>We are a software provider for ESG assets.</span>
   </div>
   <div class="navigation">
-    <a class="" href="/manual">Manual</a>
-    <a class="" href="/whitepapers">Whitepapers</a>
-    <a class="" href="/terms">Terms</a>
+    <a class="nav-item" href="/manual">Manual</a>
+    <a class="nav-item" href="/whitepapers">Whitepapers</a>
+    <a class="nav-item" href="/terms">Terms</a>
   </div>
 
 </div>
@@ -58,6 +61,8 @@
 </div>
 
 <style>
+    @import url("https://use.typekit.net/fmp1hyo.css");
+
     .header {
         display: flex;
         justify-content: space-between;
@@ -69,17 +74,26 @@
         padding-left: 15px;
         padding-right: 15px;
         text-decoration: none;
-        font-weight: 400;
-        font-family: 'Courier', sans-serif;
-        font-style: normal;
-        font-size: 20px;
         line-height: 23px;
         color: #000000;
     }
 
-    .header-text{
+    .header-text {
         display: flex;
         flex-direction: column;
+        font-size: 20px;
+    }
 
+    .welcome {
+        font-weight: 700;
+    }
+
+    .nav-item {
+        font-weight: 700;
+        font-size: 20px
+    }
+
+    .nav-item:hover {
+        border-bottom: 6px solid #DCDCDC;
     }
 </style>
