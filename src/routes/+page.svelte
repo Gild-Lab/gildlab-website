@@ -145,6 +145,7 @@
     .chart {
         font-family: 'Noto Sans JP', sans-serif;
         margin-left: -100px;
+        margin-right: -100px;
         background-color: #EBEBD3;
         padding: 1rem 4rem;
         font-size: 18px;
@@ -158,10 +159,6 @@
 
 
     @media only screen and (max-width: 600px) {
-
-        .logo {
-            display: none;
-        }
 
         .segment {
             margin-top: 2rem;
@@ -200,13 +197,14 @@
 
         .chart {
             margin-left: 0;
+            margin-right: 0;
             padding: 1rem;
             font-size: 15px;
             margin-top: 2rem;
         }
 
         .chart p {
-            width: 40%;
+            width: 100%;
         }
     }
 </style>
