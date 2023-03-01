@@ -101,4 +101,18 @@
     .navigation .active {
         border-bottom: 6px solid #E8AF55;
     }
+
+    @media only screen and (max-width: 600px) {
+        .header-text {
+            display: none;
+        }
+
+        .logo svg {
+            width: 90px;
+        }
+
+        .header {
+            padding: 10px;
+        }
+    }
 </style>

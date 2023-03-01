@@ -44,6 +44,14 @@
     </div>
     <div class="how-does-it-work segment">
       <span class="fw-700 title">How does it work? </span>
+      <div class="chart">
+        <span class="fw-700"> SFT Example</span>
+        <p>
+          Personal judgements directed based upon accountability, not persuasion. Both layers are accessible. This is
+          unique and highly sought after by traders.
+
+        </p>
+      </div>
       <div class="text">
         <p>If a public transparent layer was added to companies, accountability would trend.
         </p>
@@ -99,8 +107,8 @@
         width: 100%;
     }
 
-    .segment{
-        margin-top: 75px;
+    .segment {
+        margin-top: 5rem;
         padding: 80px 345px 100px 180px;
         line-height: 34px;
     }
@@ -108,6 +116,7 @@
     .what-we-do {
         border-left: 60px solid #A7CACC;
     }
+
     .how-does-it-work {
         border-left: 60px solid #95190C;
     }
@@ -131,5 +140,73 @@
 
     ul {
         list-style: none;
+    }
+
+    .chart {
+        font-family: 'Noto Sans JP', sans-serif;
+        margin-left: -100px;
+        background-color: #EBEBD3;
+        padding: 1rem 4rem;
+        font-size: 18px;
+        margin-top: 5rem;
+    }
+
+    .chart p {
+        width: 40%;
+        line-height: 26px;
+    }
+
+
+    @media only screen and (max-width: 600px) {
+
+        .logo {
+            display: none;
+        }
+
+        .segment {
+            margin-top: 2rem;
+            padding: 25px 10px 10px 15px;
+            line-height: 18px;
+
+        }
+
+        .what-we-do {
+            border-left: 20px solid #A7CACC;
+        }
+
+        .how-does-it-work {
+            border-left: 20px solid #95190C;
+        }
+
+        .contact {
+            border-left: 20px solid #9FA074;
+        }
+
+        .copyright {
+            border-left: 20px solid #D9D093;
+        }
+
+        .title {
+            font-size: 25px;
+        }
+
+        .text {
+            font-size: 18px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .chart {
+            margin-left: 0;
+            padding: 1rem;
+            font-size: 15px;
+            margin-top: 2rem;
+        }
+
+        .chart p {
+            width: 40%;
+        }
     }
 </style>
