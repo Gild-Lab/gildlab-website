@@ -1,6 +1,7 @@
 <script>
     import "../app.css";
     import {page} from '$app/stores';
+    import {fade} from 'svelte/transition';
 
     let path;
 
@@ -84,7 +85,7 @@
 
     {#if navOpen}
 
-      <div class="nav-mobile">
+      <div class="nav-mobile" in:fade out:fade>
         <div class="logo-and-close">
           <div class="logo-mobile">
             <a class="" href="/">
