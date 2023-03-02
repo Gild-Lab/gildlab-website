@@ -82,9 +82,20 @@
             <td class="br-3">Actions</td>
             <td class="br-3 bb-3 bg-brown">Transparency <br/><span class="fw-400">Accountability</span></td>
             <td colspan="3" class="br-3 bt-3 bb-3 bg-brown">
-              <div class="d-flex justify-between  trust">
+              <div class="d-flex justify-between trust">
                 <div> Rain Contracts <br/><span class="fw-400">Produces</span></div>
-                <div>Trust Vault</div>
+                <div class="trust-vault">
+                  <svg width="132" height="19" viewBox="0 0 132 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M131 18C123 8.79167 101.899 1 66 1C30.1015 1 8.5 10.2083 1 18" stroke="black"
+                          stroke-width="2"/>
+                  </svg>
+                  Trust Vault
+                  <svg width="93" height="12" viewBox="0 0 93 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M92 11C86.4 5.58333 71.629 1 46.5 1C21.371 1 6.25 6.41667 1 11" stroke="black"
+                          stroke-width="2"/>
+                  </svg>
+
+                </div>
                 <div>SFT<br/>
                   <span class="fw-400">(guild labs contracts)</span> <br/>
                 </div>
@@ -223,12 +234,18 @@
 
     .eye-icon {
         position: absolute;
-        right: 38%;
+        right: 33%;
         margin-top: -7rem;
     }
 
     tr {
         height: 128px;
+
+    }
+
+    td {
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 
     .br-3 {
@@ -261,9 +278,16 @@
 
     .trust {
         text-align: left;
-        padding-left: 1rem;
-        padding-right: 1rem;
+
         align-items: center;
+    }
+
+    .trust-vault {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: -50px;
     }
 
     .bg-green {
