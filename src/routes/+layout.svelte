@@ -9,7 +9,7 @@
 <div class="header">
   <div class="logo">
     <a class="" href="/">
-      <svg width="174" height="60" viewBox="0 0 174 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="174" viewBox="0 0 174 60" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_748_33)">
           <path
               d="M95.4062 60C64.1838 60 32.9576 60 1.7352 60C0.142414 60 0.00374774 59.8601 0.00374774 58.264C0 39.4327 0 20.6051 0 1.77383C0 0.155069 0.157405 9.27015e-07 1.79517 9.27015e-07C64.2175 9.27015e-07 109.775 9.27015e-07 172.194 9.27015e-07C172.505 9.27015e-07 172.819 -0.0189098 173.123 0.026476C173.644 0.105901 173.959 0.419819 173.989 0.972013C174 1.20651 173.996 1.441 173.996 1.67549C173.996 20.5598 173.996 39.4402 173.996 58.3245C173.996 59.8411 173.846 59.9924 172.366 59.9924C141.091 59.9924 126.681 59.9924 95.4024 59.9924L95.4062 60ZM172.014 2.01967H1.9938V58.0257H172.014V2.01967Z"
@@ -60,6 +60,14 @@
     <a class="nav-item fw-700" class:active={path==='/terms'} href="/terms">Terms</a>
   </div>
 
+  <div class="burger">
+    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M28.3335 9.9165L5.66683 9.9165" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M28.3335 17L5.66683 17" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M28.3335 24.0835L5.66683 24.0835" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+  </div>
+
 </div>
 <div class="content">
   <slot></slot>
@@ -107,12 +115,17 @@
             display: none;
         }
 
-        .logo svg {
-            width: 90px;
+        .navigation {
+            display: none;
         }
 
+        .logo svg {
+            width: 99px;
+        }
+
+
         .header {
-            padding: 10px;
+            padding: 17px 33px;
         }
     }
 </style>

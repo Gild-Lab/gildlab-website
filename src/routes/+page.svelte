@@ -112,7 +112,8 @@
               <div class="d-flex justify-between trust">
                 <div> Rain Contracts <br/>
                   <span class="fw-400" style="display: flex; align-items: center">Produces
-                <svg style="margin-left: 30px" width="66" height="24" viewBox="0 0 66 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg style="margin-left: 30px" width="66" height="24" viewBox="0 0 66 24" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
                   <path
                       d="M65.0607 13.0607C65.6464 12.4749 65.6464 11.5251 65.0607 10.9393L55.5147 1.39339C54.9289 0.807607 53.9792 0.807607 53.3934 1.39339C52.8076 1.97918 52.8076 2.92893 53.3934 3.51471L61.8787 12L53.3934 20.4853C52.8076 21.0711 52.8076 22.0208 53.3934 22.6066C53.9792 23.1924 54.9289 23.1924 55.5147 22.6066L65.0607 13.0607ZM1.31134e-07 13.5L64 13.5L64 10.5L-1.31134e-07 10.5L1.31134e-07 13.5Z"
                       fill="black"/>
@@ -408,6 +409,10 @@
 
         .chart p {
             width: 100%;
+        }
+
+        .chart-table {
+            display: none;
         }
     }
 </style>
