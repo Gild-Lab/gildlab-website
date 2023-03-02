@@ -51,6 +51,36 @@
           unique and highly sought after by traders.
 
         </p>
+
+<!--        <div class="chart-table">-->
+<!--          <table>-->
+<!--            <thead>-->
+<!--            <tr>-->
+<!--              <th></th>-->
+<!--              <th></th>-->
+<!--              <th>Regular View</th>-->
+<!--              <th>SFT View</th>-->
+<!--            </tr>-->
+<!--            </thead>-->
+<!--            <tbody>-->
+<!--            <tr>-->
+<!--              <td>Words</td>-->
+<!--              <td>Trustworthy</td>-->
+<!--              <td>DAO <br/> + <br/> Marketplace </td>-->
+<!--              <td></td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--              <td>Actions</td>-->
+<!--              <td>Rain Contracts <br/>Produces</td>-->
+<!--              <td>Trust Vault</td>-->
+<!--              <td>SFT <br/>-->
+<!--                (guild labs contracts)</td>-->
+<!--              <td>All data-->
+<!--                resides here</td>-->
+<!--            </tr>-->
+<!--            </tbody>-->
+<!--          </table>-->
+<!--        </div>-->
       </div>
       <div class="text">
         <p>If a public transparent layer was added to companies, accountability would trend.
@@ -155,6 +185,16 @@
     .chart p {
         width: 40%;
         line-height: 26px;
+    }
+
+    table, td, th {
+        border: 3px solid #000000;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
     }
 
 
