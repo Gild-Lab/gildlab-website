@@ -7,6 +7,7 @@
 
     $: path = $page.url.pathname;
 
+    $: path && closeNav()
 
     let navOpen = false
 
@@ -18,6 +19,7 @@
         navOpen = false;
 
     }
+
 </script>
 <div class="header">
   <div class="logo">
