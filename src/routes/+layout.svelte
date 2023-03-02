@@ -87,7 +87,7 @@
 
     {#if navOpen}
 
-      <div class="nav-mobile" in:fade out:fade>
+      <div class="nav-mobile" in:fade={{duration : 150}} out:fade={{duration : 150}}>
         <div class="logo-and-close">
           <div class="logo-mobile">
             <a class="" href="/">
