@@ -76,6 +76,20 @@
                   stroke-dasharray="20 20"/>
           </svg>
         </div>
+        <div class="arrow-1">
+          <svg width="73" height="61" viewBox="0 0 73 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M72.4908 3.16565C72.5823 2.34229 71.989 1.60066 71.1656 1.50918L57.7482 0.0183541C56.9249 -0.0731316 56.1832 0.520169 56.0917 1.34353C56.0003 2.16689 56.5936 2.90852 57.4169 3.00001L69.3435 4.32518L68.0183 16.2518C67.9269 17.0751 68.5202 17.8168 69.3435 17.9083C70.1669 17.9997 70.9085 17.4064 71 16.5831L72.4908 3.16565ZM1.93704 60.1713L71.937 4.17131L70.063 1.8287L0.0629575 57.8287L1.93704 60.1713Z"
+                fill="black"/>
+          </svg>
+        </div>
+        <div class="arrow-2">
+          <svg width="66" height="63" viewBox="0 0 66 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M1.96314 0.500456C1.13496 0.520817 0.480099 1.20869 0.500457 2.03687L0.832236 15.5328C0.852594 16.361 1.54047 17.0158 2.36865 16.9955C3.19682 16.9751 3.85169 16.2872 3.83133 15.4591L3.53642 3.46269L15.5328 3.16778C16.361 3.14742 17.0158 2.45954 16.9955 1.63137C16.9751 0.803184 16.2872 0.148321 15.4591 0.168681L1.96314 0.500456ZM65.5509 60.4302L3.03428 0.913597L0.965732 3.08641L63.4823 62.603L65.5509 60.4302Z"
+                fill="black"/>
+          </svg>
+        </div>
         <table class="fw-700">
           <thead>
           <tr>
@@ -96,7 +110,15 @@
             <td class="br-3 bb-3 bg-brown">Transparency <br/><span class="fw-400">Accountability</span></td>
             <td colspan="3" class="br-3 bt-3 bb-3 bg-brown">
               <div class="d-flex justify-between trust">
-                <div> Rain Contracts <br/><span class="fw-400">Produces</span></div>
+                <div> Rain Contracts <br/>
+                  <span class="fw-400" style="display: flex; align-items: center">Produces
+                <svg style="margin-left: 30px" width="66" height="24" viewBox="0 0 66 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                      d="M65.0607 13.0607C65.6464 12.4749 65.6464 11.5251 65.0607 10.9393L55.5147 1.39339C54.9289 0.807607 53.9792 0.807607 53.3934 1.39339C52.8076 1.97918 52.8076 2.92893 53.3934 3.51471L61.8787 12L53.3934 20.4853C52.8076 21.0711 52.8076 22.0208 53.3934 22.6066C53.9792 23.1924 54.9289 23.1924 55.5147 22.6066L65.0607 13.0607ZM1.31134e-07 13.5L64 13.5L64 10.5L-1.31134e-07 10.5L1.31134e-07 13.5Z"
+                      fill="black"/>
+                </svg>
+                </span>
+                </div>
                 <div class="trust-vault">
                   <svg width="132" height="19" viewBox="0 0 132 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M131 18C123 8.79167 101.899 1 66 1C30.1015 1 8.5 10.2083 1 18" stroke="black"
@@ -253,14 +275,30 @@
 
     .line-1 {
         position: absolute;
-        right: 39% ;
+        right: 39%;
         margin-top: -20px;
     }
 
     .line-2 {
         position: absolute;
-        right: 27% ;
+        right: 27%;
         margin-top: -20px;
+    }
+
+    .arrow-1 {
+        position: absolute;
+        right: 57%;
+        margin-top: 14rem;
+        z-index: 1;
+
+    }
+
+    .arrow-2 {
+        position: absolute;
+        right: 42%;
+        margin-top: 14rem;
+        z-index: 1;
+
     }
 
     tr {
