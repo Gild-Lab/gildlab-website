@@ -61,6 +61,19 @@
             <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M54 78C13.5 78 0 39 0 39C0 39 13.5 0 54 0C94.5 0 108 39 108 39C108 39 94.5 78 54 78ZM14.817 39.28L14.6726 39L14.817 38.72C16.3758 35.7178 18.7902 31.7436 22.1835 27.8224C28.8869 20.0762 38.8948 13 54 13C69.1052 13 79.1131 20.0762 85.8165 27.8224C89.2098 31.7436 91.6242 35.7178 93.183 38.72L93.3274 39L93.183 39.28C91.6242 42.2822 89.2098 46.2564 85.8165 50.1776C79.1131 57.9238 69.1052 65 54 65C38.8948 65 28.8869 57.9238 22.1835 50.1776C18.7902 46.2564 16.3758 42.2822 14.817 39.28Z"
                   fill="black"/>
+            <circle cx="64" cy="29" r="10" fill="white"/>
+          </svg>
+        </div>
+        <div class="line-1">
+          <svg width="49" height="80" viewBox="0 0 49 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="47.292" y1="0.761977" x2="1.29205" y2="78.762" stroke="black" stroke-width="3"
+                  stroke-dasharray="20 20"/>
+          </svg>
+        </div>
+        <div class="line-2">
+          <svg width="109" height="206" viewBox="0 0 109 206" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="1.33104" y1="1.30838" x2="107.331" y2="205.308" stroke="black" stroke-width="3"
+                  stroke-dasharray="20 20"/>
           </svg>
         </div>
         <table class="fw-700">
@@ -236,6 +249,18 @@
         position: absolute;
         right: 33%;
         margin-top: -7rem;
+    }
+
+    .line-1 {
+        position: absolute;
+        right: 39% ;
+        margin-top: -20px;
+    }
+
+    .line-2 {
+        position: absolute;
+        right: 27% ;
+        margin-top: -20px;
     }
 
     tr {
