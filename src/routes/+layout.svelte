@@ -20,6 +20,16 @@
 
     }
 
+    export function toSentenceCase(text) {
+        text = text.toLowerCase()
+        let txtArr = text.split(/[,._\s]/)
+        let firstWord = txtArr[0]
+        let firstLetter = firstWord.charAt(0).toUpperCase()
+        firstWord = firstLetter + firstWord.slice(1)
+        txtArr = txtArr.slice(1)
+        txtArr.unshift(firstWord)
+        return (txtArr.join(' '))
+    }
 </script>
 <div class="header">
   <div class="logo">
@@ -74,7 +84,9 @@
     <a class="nav-item fw-700" class:active={path==='/whitepapers'} href="/whitepapers">Whitepapers</a>
     <a class="nav-item fw-700" class:active={path==='/terms'} href="/terms">Terms</a>
   </div>
-
+  {#if !navOpen}
+    <div class="location fw-700">{toSentenceCase(path.slice(1))}</div>
+  {/if}
   <div class="burger">
     {#if !navOpen}
       <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -256,6 +268,13 @@
             display: flex;
             padding: 17px 20px 17px 33px;
             justify-content: space-between;
+        }
+
+        .location {
+            font-family: 'Courier', sans-serif;
+            font-style: normal;
+            font-size: 16px;
+            line-height: 40px;
         }
     }
 </style>
