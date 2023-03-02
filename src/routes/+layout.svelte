@@ -210,6 +210,10 @@
         display: none;
     }
 
+    .location{
+        display: none;
+    }
+
     @media only screen and (max-width: 600px) {
 
         .burger {
@@ -271,6 +275,7 @@
         }
 
         .location {
+            display: block;
             font-family: 'Courier', sans-serif;
             font-style: normal;
             font-size: 16px;
