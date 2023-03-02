@@ -1,4 +1,4 @@
-<script>
+<script xmlns="http://www.w3.org/1999/html">
     import image from "../assets/image.svg"
 </script>
 
@@ -37,7 +37,7 @@
           they hold e.g. income and the decentralised finance community.
         </p>
 
-        <p><span class="fw-700">Email David at david@gildlab.xyz</span> if you would like to become a customer of Gild
+        <p><span class="fw-700">Email </span> David at <span class="fw-700"> gildlab.xyz</span> if you would like to become a customer of Gild
           Lab.
         </p>
       </div>
@@ -100,7 +100,7 @@
           linked in baskets.
         </p>
         <p>
-          <span class="fw-700">Email David at david@gildlab.xyz</span> if you would like to use the Semi-Fungible
+          <span class="fw-700">Email </span> David at <span class="fw-700"> gildlab.xyz</span> if you would like to use the Semi-Fungible
           System.
         </p>
       </div>
@@ -108,7 +108,7 @@
     <div class="contact segment">
       <span class="fw-700 title">Contact Gild Labs.</span>
       <div class="text">
-        <p><span class="fw-700">Email</span> david@gildlab.xyz
+        <p><span class="fw-700">Email</span> david at gildlab.xyz
         </p>
         <p>
           <span class="fw-700">Business address</span>
@@ -117,7 +117,7 @@
         <div>Company number 13684709
         </div>
         <div>
-          71-75 Shelton Street, Covent Garden, London, United Kingdom, WC2H 9JQ
+          Address Unit 8, 28 Mill Street, Ottery St. Mary, England, EX11 1AD
         </div>
       </div>
     </div>
