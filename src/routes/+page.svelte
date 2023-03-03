@@ -1,10 +1,6 @@
 <script xmlns="http://www.w3.org/1999/html">
     import image from "../assets/image.svg"
-    import {navOpen} from "../store.js";
 </script>
-{#if ($navOpen)}
-  <div class="overlay"></div>
-{/if}
 <div class="content">
   <img src={image} alt="gild lab"/>
   <div class="info">
@@ -288,19 +284,6 @@
 
 
 <style>
-    .overlay {
-        display: none;
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 2;
-        cursor: pointer;
-    }
 
     .content {
         width: 100%;
@@ -544,10 +527,5 @@
             text-align: center;
             padding: 37px 0;
         }
-
-        .overlay {
-            display: block;
-        }
-
     }
 </style>

@@ -30,6 +30,9 @@
         return (txtArr.join(' '))
     }
 </script>
+{#if ($navOpen)}
+  <div class="overlay"></div>
+{/if}
 <div class="header">
   <div class="logo">
     <a class="" href="/">
@@ -171,6 +174,20 @@
     @import url("https://use.typekit.net/fmp1hyo.css");
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
 
+    .overlay {
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 2;
+        cursor: pointer;
+    }
+
     .header {
         display: flex;
         justify-content: space-between;
@@ -282,5 +299,10 @@
             font-size: 16px;
             line-height: 40px;
         }
+
+        .overlay {
+            display: block;
+        }
+
     }
 </style>
