@@ -2,6 +2,7 @@
     import "../app.css";
     import {page} from '$app/stores';
     import {fade} from 'svelte/transition';
+    import {navOpen} from "../store.js";
 
     let path;
 
@@ -9,15 +10,13 @@
 
     $: path && closeNav()
 
-    let navOpen = false
 
     function openNav() {
-        navOpen = true;
+        navOpen.set(true)
     }
 
     function closeNav() {
-        navOpen = false;
-
+        navOpen.set(false)
     }
 
     export function toSentenceCase(text) {
@@ -84,11 +83,11 @@
     <a class="nav-item fw-700" class:active={path==='/whitepapers'} href="/whitepapers">Whitepapers</a>
     <a class="nav-item fw-700" class:active={path==='/terms'} href="/terms">Terms</a>
   </div>
-  {#if !navOpen}
+  {#if !$navOpen}
     <div class="location fw-700">{toSentenceCase(path.slice(1))}</div>
   {/if}
   <div class="burger">
-    {#if !navOpen}
+    {#if !$navOpen}
       <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg"
            on:click={()=>{openNav()}}>
         <path d="M28.3335 9.9165L5.66683 9.9165" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
@@ -97,7 +96,7 @@
       </svg>
     {/if}
 
-    {#if navOpen}
+    {#if $navOpen}
 
       <div class="nav-mobile" in:fade={{duration : 150}} out:fade={{duration : 150}}>
         <div class="logo-and-close">
@@ -251,6 +250,7 @@
             flex-direction: column;
             top: 0;
             border-right: 13px solid #8C8790;
+            z-index: 3;
         }
 
         .nav-mobile a {
