@@ -524,7 +524,6 @@
             display: block;
             background: #EBEBD3;
             margin-left: -15px;
-            margin-right: -15px;
             text-align: center;
             padding: 37px 0;
         }

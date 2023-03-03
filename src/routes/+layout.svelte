@@ -210,7 +210,7 @@
         display: none;
     }
 
-    .location{
+    .location {
         display: none;
     }
 
@@ -250,6 +250,7 @@
             display: flex;
             flex-direction: column;
             top: 0;
+            border-right: 13px solid #8C8790;
         }
 
         .nav-mobile a {
