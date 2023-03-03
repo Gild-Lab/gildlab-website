@@ -83,7 +83,10 @@
   </div>
   <div class="navigation">
     <a class="nav-item fw-700" class:active={path==='/manual'} href="/manual">Manual</a>
-    <a class="nav-item fw-700" class:active={path==='/whitepapers'} href="/whitepapers">Whitepapers</a>
+    <a class="nav-item fw-700" class:active={path==='/whitepapers1'} href="/whitepapers">Whitepaper 1</a>
+    <a class="nav-item fw-700" class:active={path==='/whitepapers2'} href="/whitepapers2">Whitepaper 2</a>
+    <a class="nav-item fw-700" class:active={path==='/whitepapers3'} href="/whitepapers3">Whitepaper 3</a>
+    <a class="nav-item fw-700" class:active={path==='/whitepapers4'} href="/whitepapers4">Whitepaper 4</a>
     <a class="nav-item fw-700" class:active={path==='/terms'} href="/terms">Terms</a>
   </div>
   {#if !$navOpen}
@@ -158,7 +161,10 @@
         </div>
 
         <a class="nav-item fw-700" class:active={path==='/manual'} href="/manual">Manual</a>
-        <a class="nav-item fw-700" class:active={path==='/whitepapers'} href="/whitepapers">Whitepapers</a>
+        <a class="nav-item fw-700" class:active={path==='/whitepapers'} href="/whitepapers">Whitepaper 1</a>
+        <a class="nav-item fw-700" class:active={path==='/whitepapers2'} href="/whitepapers2">Whitepaper 2</a>
+        <a class="nav-item fw-700" class:active={path==='/whitepapers3'} href="/whitepapers3">Whitepaper 3</a>
+        <a class="nav-item fw-700" class:active={path==='/whitepapers4'} href="/whitepapers4">Whitepaper 4</a>
         <a class="nav-item fw-700" class:active={path==='/terms'} href="/terms">Terms</a>
       </div>
     {/if}
