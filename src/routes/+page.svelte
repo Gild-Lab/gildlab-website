@@ -320,6 +320,7 @@
     }
 
     .title {
+        font-family: 'Courier', sans-serif;
         font-size: 30px;
     }
 
@@ -461,33 +462,32 @@
         .segment {
             margin-top: 2rem;
             padding: 25px 10px 10px 15px;
-            line-height: 18px;
-
+            line-height: 25px;
         }
 
         .what-we-do {
-            border-left: 20px solid #A7CACC;
+            border-left: 13px solid #A7CACC;
         }
 
         .how-does-it-work {
-            border-left: 20px solid #95190C;
+            border-left: 13px solid #95190C;
         }
 
         .contact {
-            border-left: 20px solid #9FA074;
+            border-left: 13px solid #9FA074;
         }
 
         .tokenisation {
-            border-left: 20px solid #8C8790;
+            border-left: 13px solid #8C8790;
         }
 
         .copyright {
-            border-left: 20px solid #D9D093;
+            border-left: 13px solid #D9D093;
             padding-bottom: 4rem;
         }
 
         .title {
-            font-size: 25px;
+            font-size: 20px;
         }
 
         .text {
@@ -498,10 +498,6 @@
             margin-top: 0;
         }
 
-
-        ul {
-            list-style: none;
-        }
 
         .chart {
             margin-left: 0;
