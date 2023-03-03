@@ -227,6 +227,40 @@
         </p>
       </div>
     </div>
+    <div class="tokenisation segment">
+      <span class="fw-700 title">Tokenisation Products</span>
+      <div class="text">
+        <p>ETHg is a hybrid erc20 and erc1155 that mints/burns at a reference gold price from Chainlink oracles,
+          denominated in ETH. The erc20 is called ETHGild with symbol ETHg. It works much like wrapping/unwrapping ETH
+          to WETH. ETH {'<>'} ETHg is a mint/burn process that happens entirely outside of the AMM and so isn't subject
+          to
+          IL, and ETHg can be printed "instantly" by anyone who holds ETH, and can be burned by anyone who holds a
+          vault. ETHg uses purely onchain assets and so anyone can mint/burn but the price doesn't track a peg, it
+          floats in a range.
+        </p>
+        <p>
+          Semi-Fungible Token replicates the hybrid erc20 and erc1155 implementation and uses offchain assets, so only
+          the offchain custodian can mint/burn, and they can arbitrage like Tether to keep a tight peg and auditable
+          onchain and backed by ETH. This is suitable for assets that have mature offchain markets.
+        </p>
+        <p>Trust Buckets frictionless creation of new asset classes available globally where liquidity pools to the most
+          transparent assets. Replicates the hybrid erc20 and erc1155 implementation and uses offchain assets, so only
+          the offchain custodian can mint/burn, but where there is no established offchain market and so liquidity
+          solutions move beyond offchain to onchain arbitrage.
+        </p>
+        <p>Liquidity Products:</p>
+        <p>Sloshy is a depegging arbitrage strategy. Sloshes are the things that make the tokens move between each
+          other. You select a set of tokens you trust that have similar properties. When a token falls in value relative
+          to another you sell all your other tokens into your depegging token. And this process cycles indefinitely.
+          Just make sure you don’t choose a token that depegs permanently.</p>
+        <p>
+          Neap is like a private equity liquidity strategy. The strategy is similar to a Dutch auction where the price
+          starts high and keeps going down. Neap continues to sell tokens for a lesser amount as time progresses. It
+          gives people a chance to get the same token at a lesser price until the token sells out. The intention is to
+          install fomo for your coin. The goal is liquidity for your product.
+        </p>
+      </div>
+    </div>
     <div class="contact segment">
       <span class="fw-700 title">Contact Gild Labs.</span>
       <div class="text">
@@ -277,6 +311,10 @@
         border-left: 60px solid #9FA074;
     }
 
+    .tokenisation {
+        border-left: 60px solid #8C8790;
+    }
+
     .copyright {
         border-left: 60px solid #D9D093;
     }
@@ -288,6 +326,7 @@
     .text {
         font-family: 'Noto Sans JP', sans-serif;
         font-size: 20px;
+        margin-top: 40px;
     }
 
 
@@ -394,7 +433,6 @@
 
     .trust {
         text-align: left;
-
         align-items: center;
     }
 
@@ -439,6 +477,10 @@
             border-left: 20px solid #9FA074;
         }
 
+        .tokenisation {
+            border-left: 20px solid #8C8790;
+        }
+
         .copyright {
             border-left: 20px solid #D9D093;
         }
@@ -449,6 +491,7 @@
 
         .text {
             font-size: 18px;
+            margin-top: 20px;
         }
 
         ul {
