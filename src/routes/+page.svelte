@@ -9,33 +9,23 @@
       <span class="fw-700 title"> What we do </span>
       <div class="text">
         <p>
-          Gild Lab is the infrastructure provider for Semi-Fungible System users who want hosted infrastructure.
-          Gild Lab created the open source Semi-Fungible System and maintains the system.
+          Our vision is to bring real world assets on chain in a liquid, transparent, decentralised way
         </p>
 
-        <p>The infrastructure Gild Lab provides customers includes:</p>
+        <p>Our focus is asset tokenisation and real world asset liquidity solutions
+        </p>
+        <p>Our tokenisation solutions are free and open source
+        </p>
+        <p>Our business model is hosting and infrastructure provider for the convenient use of these products. This
+          includes the setup and creation of decentralised computing infrastructure in multiple countries to host a
+          Software Instance transparently, including computer systems that:
+        </p>
         <ul>
-          <li>- SDK</li>
-          <li>- Subgraph</li>
-          <li>- Subgraph hosting</li>
-          <li>- Subgraph indexing fee (subject to usage)</li>
-          <li>- Contracts</li>
-          <li>- Auditing scripts</li>
-          <li>- IPFS pinning</li>
-          <li>- IPFS node hosting</li>
-          <li>- Community hosting module</li>
-          <li>- Frontend integration support</li>
-          <li>- Auditor onboarding support</li>
-          <li>- Key management support</li>
-          <li>- Sample systems to replicate</li>
+          <li>Run an IPFS node</li>
+          <li>Index the Ethereum blockchain to create a blockchain subgraph</li>
+          <li>Watch changes to the blockchain subgraph and create IPFS pins to make resources available and</li>
+          <li>Two extra setups of the infrastructure above to create system resiliency with redundancy</li>
         </ul>
-
-        <p>The Semi-Fungible system brings assets onchain. Assets include gold, silver, realestate and carbon credits
-          which are broadly similar, with common properties although the units are not completely interchangeable. The
-          Semi-Fungible system creates a decentralised link between real world Semi-Fungible assets, a community
-          property
-          they hold e.g. income and the decentralised finance community.
-        </p>
 
         <p><span class="fw-700">Email </span> David at <span class="fw-700"> gildlab.xyz</span> if you would like to
           become a customer of Gild
@@ -218,13 +208,12 @@
         <p>If a public transparent layer was added to companies, accountability would trend.
         </p>
         <p>
-
-
-          The underlying asset e.g. a particular warehouse is represented with a Non-Fungible Token. A common property
-          across all underlying assets e.g. income from all warehouses is represented with a Fungible Token, because it
-          is shared.
-
-        <p>Asset holders receive the Non-Fungible Token and sell the Fungible Token; retail, institutional investors buy
+          The underlying asset e.g. a particular warehouse is represented with a Non-Fungible Token.
+          A common property across all underlying assets e.g. income from all warehouses is represented with a Fungible
+          Token, because it is shared.
+        </p>
+        <p>
+          Asset holders receive the Non-Fungible Token and sell the Fungible Token; retail, institutional investors buy
           the Fungible Token. Rewards earned are distributed to holders.
         </p>
         <p>Assets represent a closed ecosystem e.g. UK vaulted gold only, where there are no toxic assets that devalue
@@ -273,7 +262,7 @@
     .segment {
         margin-top: 5rem;
         padding: 80px 345px 100px 180px;
-        line-height: 34px;
+        line-height: 35px;
     }
 
     .what-we-do {
@@ -301,9 +290,6 @@
         font-size: 20px;
     }
 
-    ul {
-        list-style: none;
-    }
 
     .chart {
         font-family: 'Noto Sans JP', sans-serif;
