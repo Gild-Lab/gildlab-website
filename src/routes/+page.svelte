@@ -483,6 +483,7 @@
 
         .copyright {
             border-left: 20px solid #D9D093;
+            padding-bottom: 4rem ;
         }
 
         .title {
@@ -490,9 +491,13 @@
         }
 
         .text {
-            font-size: 18px;
-            margin-top: 20px;
+            font-size: 14px;
         }
+
+        .copyright .text{
+            margin-top: 0;
+        }
+
 
         ul {
             list-style: none;
@@ -502,10 +507,9 @@
             margin-left: 0;
             margin-right: 0;
             padding: 0;
-            font-size: 18px;
+            font-size: 14px;
             margin-top: 2rem;
             background-color: #ffffff;
-
         }
 
         .chart p {
