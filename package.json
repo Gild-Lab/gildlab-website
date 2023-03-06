@@ -19,6 +19,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@sveltejs/adapter-static": "^2.0.1"
+		"@sveltejs/adapter-static": "^2.0.1",
+		"sveltejs-adapter-ipfs": "^0.4.12"
 	}
 }
