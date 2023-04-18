@@ -29,7 +29,7 @@
         firstWord = firstLetter + firstWord.slice(1)
         txtArr = txtArr.slice(1)
         txtArr.unshift(firstWord)
-        return (txtArr.join(' '))
+        return txtArr.join(' ').replace("-"," ")
     }
 
     let isOpen = false;
@@ -86,22 +86,16 @@
     <span>We are a software provider for ESG assets.</span>
   </div>
   <div class="navigation">
-<!--    <a class="nav-item fw-700" class:active={path==='/manual'} href="/manual">          Manual</a>-->
-<!--    <a class="nav-item fw-700" class:active={path==='/whitepaper1'} href="/whitepaper1">Whitepaper 1</a>-->
-<!--    <a class="nav-item fw-700" class:active={path==='/whitepaper2'} href="/whitepaper2">Whitepaper 2</a>-->
-<!--    <a class="nav-item fw-700" class:active={path==='/whitepaper3'} href="/whitepaper3">Whitepaper 3</a>-->
-<!--    <a class="nav-item fw-700" class:active={path==='/whitepaper4'} href="/whitepaper4">Whitepaper 4</a>-->
-<!--    <a class="nav-item fw-700" class:active={path==='/terms'} href="/terms">            Terms</a>-->
 
   <Nav>
     <NavItem><NavLink href="/manual"      ><span class="nav-item fw-700" class:active={path==='/manual/'}> Manual</span></NavLink></NavItem>
     <Dropdown nav {isOpen} toggle={() => (isOpen = !isOpen)}>
       <DropdownToggle nav><span class="nav-item fw-700">Whitepapers</span></DropdownToggle>
       <DropdownMenu>
-        <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper1/'}><DropdownItem><NavLink href="/whitepaper1" >Whitepaper 1 </NavLink></DropdownItem></div>
-        <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper2/'}><DropdownItem><NavLink href="/whitepaper2" >Whitepaper 2 </NavLink></DropdownItem></div>
-        <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper3/'}><DropdownItem><NavLink href="/whitepaper3" >Whitepaper 3 </NavLink></DropdownItem></div>
-        <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper4/'}><DropdownItem><NavLink href="/whitepaper4" >Whitepaper 4 </NavLink></DropdownItem></div>
+        <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper-1/'}><DropdownItem><NavLink href="/whitepaper-1" >Whitepaper 1 </NavLink></DropdownItem></div>
+        <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper-2/'}><DropdownItem><NavLink href="/whitepaper-2" >Whitepaper 2 </NavLink></DropdownItem></div>
+        <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper-3/'}><DropdownItem><NavLink href="/whitepaper-3" >Whitepaper 3 </NavLink></DropdownItem></div>
+        <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper-4/'}><DropdownItem><NavLink href="/whitepaper-4" >Whitepaper 4 </NavLink></DropdownItem></div>
       </DropdownMenu>
     </Dropdown>
     <NavItem><NavLink href="/terms"       ><span class="nav-item fw-700" class:active={path==='/terms/'}> Terms</span></NavLink></NavItem>
@@ -110,7 +104,7 @@
 
 
   {#if !$navOpen}
-    <div class="location fw-700">{toSentenceCase(path.slice(1))}</div>
+    <div class="location fw-700">{toSentenceCase(path.slice(1,-1))}</div>
   {/if}
   <div class="burger">
     {#if !$navOpen}
@@ -181,10 +175,10 @@
         </div>
 
         <a class="nav-item fw-700" class:active={path==='/manual'} href="/manual">Manual</a>
-        <a class="nav-item fw-700" class:active={path==='/whitepaper1'} href="/whitepaper1">Whitepaper 1</a>
-        <a class="nav-item fw-700" class:active={path==='/whitepaper2'} href="/whitepaper2">Whitepaper 2</a>
-        <a class="nav-item fw-700" class:active={path==='/whitepaper3'} href="/whitepaper3">Whitepaper 3</a>
-        <a class="nav-item fw-700" class:active={path==='/whitepaper4'} href="/whitepaper4">Whitepaper 4</a>
+        <a class="nav-item fw-700" class:active={path==='/whitepaper-1'} href="/whitepaper-1">Whitepaper 1</a>
+        <a class="nav-item fw-700" class:active={path==='/whitepaper-2'} href="/whitepaper-2">Whitepaper 2</a>
+        <a class="nav-item fw-700" class:active={path==='/whitepaper-3'} href="/whitepaper-3">Whitepaper 3</a>
+        <a class="nav-item fw-700" class:active={path==='/whitepaper-4'} href="/whitepaper-4">Whitepaper 4</a>
         <a class="nav-item fw-700" class:active={path==='/terms'} href="/terms">Terms</a>
       </div>
     {/if}

@@ -24,4 +24,11 @@ a {
 
 .dropdown-item{
     font-weight: 700;
+    padding: 0;
+}
+
+.dropdown-menu{
+    padding: 0;
+    border: 2px solid #DCDCDC;
+    border-radius: 0;
 }
