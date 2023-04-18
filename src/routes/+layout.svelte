@@ -3,6 +3,8 @@
     import {page} from '$app/stores';
     import {fade} from 'svelte/transition';
     import {navOpen} from "../store.js";
+    import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem, NavLink} from "sveltestrap";
+
 
     let path;
 
@@ -29,6 +31,8 @@
         txtArr.unshift(firstWord)
         return (txtArr.join(' '))
     }
+
+    let isOpen = false;
 </script>
 {#if ($navOpen)}
   <div class="overlay"></div>
@@ -82,13 +86,29 @@
     <span>We are a software provider for ESG assets.</span>
   </div>
   <div class="navigation">
-    <a class="nav-item fw-700" class:active={path==='/manual'} href="/manual">Manual</a>
-    <a class="nav-item fw-700" class:active={path==='/whitepaper1'} href="/whitepaper1">Whitepaper 1</a>
-    <a class="nav-item fw-700" class:active={path==='/whitepaper2'} href="/whitepaper2">Whitepaper 2</a>
-    <a class="nav-item fw-700" class:active={path==='/whitepaper3'} href="/whitepaper3">Whitepaper 3</a>
-    <a class="nav-item fw-700" class:active={path==='/whitepaper4'} href="/whitepaper4">Whitepaper 4</a>
-    <a class="nav-item fw-700" class:active={path==='/terms'} href="/terms">Terms</a>
+<!--    <a class="nav-item fw-700" class:active={path==='/manual'} href="/manual">          Manual</a>-->
+<!--    <a class="nav-item fw-700" class:active={path==='/whitepaper1'} href="/whitepaper1">Whitepaper 1</a>-->
+<!--    <a class="nav-item fw-700" class:active={path==='/whitepaper2'} href="/whitepaper2">Whitepaper 2</a>-->
+<!--    <a class="nav-item fw-700" class:active={path==='/whitepaper3'} href="/whitepaper3">Whitepaper 3</a>-->
+<!--    <a class="nav-item fw-700" class:active={path==='/whitepaper4'} href="/whitepaper4">Whitepaper 4</a>-->
+<!--    <a class="nav-item fw-700" class:active={path==='/terms'} href="/terms">            Terms</a>-->
+
+  <Nav>
+    <NavItem><NavLink href="/manual"      ><span class="nav-item fw-700" class:active={path==='/manual/'}> Manual</span></NavLink></NavItem>
+    <Dropdown nav {isOpen} toggle={() => (isOpen = !isOpen)}>
+      <DropdownToggle nav><span class="nav-item fw-700">Whitepapers</span></DropdownToggle>
+      <DropdownMenu>
+        <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper1/'}><DropdownItem><NavLink href="/whitepaper1" >Whitepaper 1 </NavLink></DropdownItem></div>
+        <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper2/'}><DropdownItem><NavLink href="/whitepaper2" >Whitepaper 2 </NavLink></DropdownItem></div>
+        <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper3/'}><DropdownItem><NavLink href="/whitepaper3" >Whitepaper 3 </NavLink></DropdownItem></div>
+        <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper4/'}><DropdownItem><NavLink href="/whitepaper4" >Whitepaper 4 </NavLink></DropdownItem></div>
+      </DropdownMenu>
+    </Dropdown>
+    <NavItem><NavLink href="/terms"       ><span class="nav-item fw-700" class:active={path==='/terms/'}> Terms</span></NavLink></NavItem>
+  </Nav>
   </div>
+
+
   {#if !$navOpen}
     <div class="location fw-700">{toSentenceCase(path.slice(1))}</div>
   {/if}
@@ -216,16 +236,31 @@
         font-size: 20px;
     }
 
-    .nav-item {
-        font-size: 20px
+    .nav-item, .nav-dropdown-item{
+        font-size: 20px;
+        color: #000000;
+        line-height: 15px
     }
 
     .navigation .nav-item:hover {
         border-bottom: 6px solid #DCDCDC;
     }
 
+    .navigation .nav-dropdown-item:hover {
+       background:  #DCDCDC;
+    }
+
+
+    .navigation {
+        font-size: 20px;
+    }
+
     .navigation .active {
         border-bottom: 6px solid #E8AF55;
+    }
+
+    .navigation .active-dropdown-item {
+        background: #E8AF55;
     }
 
     .burger {

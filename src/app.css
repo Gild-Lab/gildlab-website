@@ -1,10 +1,27 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
 body {
-  font-family: 'courier-std', monospace;
-  margin: 0;
+    font-family: 'courier-std', monospace;
+    margin: 0;
 }
-.fw-400{
-  font-weight: 400 ;
+
+.fw-400 {
+    font-weight: 400;
 }
-.fw-700{
-  font-weight: 700 ;
+
+.fw-700 {
+    font-weight: 700;
+}
+
+a {
+    color: #000000 !important;
+    text-decoration: none !important;
+}
+
+.dropdown-item:active {
+    background: #DCDCDC;
+}
+
+.dropdown-item{
+    font-weight: 700;
 }
