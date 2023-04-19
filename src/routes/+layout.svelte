@@ -257,6 +257,7 @@
         width: 100%;
         background: #ffffff;
         z-index: 2;
+        transition: padding 1s ease;
     }
 
     .content-tall {
