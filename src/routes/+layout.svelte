@@ -91,7 +91,7 @@
       </svg>
     </a>
   </div>
-  <div class={isPdfOpen || scrolled? "header-text-hidden": "header-text" } id="header-text">
+  <div class={isPdfOpen || scrolled? "header-text header-text-hidden": "header-text" } id="header-text">
     <span class="fw-700">Welcome to Gild Lab</span>
     <span>We are a software provider for ESG assets.</span>
   </div>
@@ -262,21 +262,21 @@
         width: 100%;
         background: #ffffff;
         z-index: 2;
-        transition: 0.4s;
+        transition: 0.2s;
     }
 
     .content-tall {
         margin-top: 180px;
-        transition: 0.4s;
+        transition: 0.2s;
     }
 
     .content-short {
         margin-top: 70px;
-        transition: 0.4s;
+        transition: 0.2s;
     }
 
     #gildlab-logo {
-        transition: 0.4s;
+        transition: 0.2s;
     }
 
     .navigation a {
@@ -291,12 +291,13 @@
         display: flex;
         flex-direction: column;
         font-size: 20px;
-        transition: opacity 0.4s linear;
+        transition: opacity 0.2s linear;
         opacity: 1;
     }
 
     .header-text-hidden {
         opacity: 0;
+        transition: opacity 0.2s linear;
     }
 
     .nav-item, .dropdown-item {
