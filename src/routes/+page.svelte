@@ -5,15 +5,20 @@
     let endOfImage = false
 
     onMount(() => {
+        let abstract = document.getElementById("abstract")
+        let scroll = document.getElementById("scroll")
+
         let html = document.documentElement;
-        window.onscroll = function (e) {
-            let abstract = document.getElementById("abstract")
-            let scroll = document.getElementById("scroll")
+        let initialPosition =  abstract.offsetTop + 2*abstract.offsetHeight/7
+        scroll.style.bottom = initialPosition  + "px"
+
+        window.onscroll = function () {
             let abstractPosition = abstract.offsetTop + abstract.offsetHeight
             let scrollPosition = scroll.offsetTop + scroll.offsetHeight
-            scroll.style.bottom = 160 - html.scrollTop + "px"
+            scroll.style.bottom = initialPosition - html.scrollTop + "px"
+
             endOfImage = abstractPosition < scrollPosition;
-            if (endOfImage && html.scrollTop > 160) {
+            if (endOfImage && html.scrollTop > initialPosition) {
                 scroll.style.bottom = "-1px"
             }
         }
@@ -22,7 +27,7 @@
 <div class="content">
   <div class="main-image">
     <img src={image} alt="gild lab" id="abstract"/>
-    <div class={endOfImage ? "scroll  bottom-end": "scroll"} id="scroll">
+    <div class={endOfImage ? "scroll bottom-end": "scroll"} id="scroll">
       <svg width="174" height="51" viewBox="0 0 174 51" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="174" height="50.0637" fill="white"/>
         <rect x="5" y="5.32617" width="163.772" height="39.3683" fill="black"/>
@@ -336,7 +341,6 @@
         position: absolute;
         width: 95%;
         text-align: right;
-        bottom: 16rem;
     }
 
     .segment {
