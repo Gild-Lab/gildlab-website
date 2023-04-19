@@ -18,26 +18,6 @@ a {
     text-decoration: none !important;
 }
 
-.dropdown-item:active {
-    background: #DCDCDC;
-}
-
-.dropdown-item{
-    font-weight: 700;
-    padding: 0;
-}
-
-.dropdown-menu{
-    padding: 0;
-    border: 2px solid #DCDCDC;
-    border-radius: 0;
-}
-
-.breakpoint-2 .dropdown-menu{
-    right: -50px!important;
-    left: unset;
-}
-
 .pdf-container {
     width: calc(100vw - 5px);
     height: calc(100vh - 100px);

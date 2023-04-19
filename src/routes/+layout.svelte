@@ -3,8 +3,6 @@
     import {page} from '$app/stores';
     import {fade} from 'svelte/transition';
     import {navOpen} from "../store.js";
-    import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem, NavLink} from "sveltestrap";
-
 
     let path;
 
@@ -32,8 +30,6 @@
         return txtArr.join(' ').replace("-"," ")
     }
 
-    let isOpen = false;
-    let isOpenBurger = false;
     let isPdfOpen = false;
 
     $: path && (isPdfOpen = path === "/")
@@ -91,42 +87,46 @@
     <span>We are a software provider for ESG assets.</span>
   </div>
   <div class="navigation breakpoint-1">
-  <Nav>
-    <NavItem><NavLink href="/manual"><span class="nav-item fw-700" class:active={path==='/manual/'}> Manual</span></NavLink></NavItem>
-    <Dropdown nav {isOpen} toggle={() => (isOpen = !isOpen)}>
-      <DropdownToggle nav><span class="nav-item fw-700">Whitepapers</span></DropdownToggle>
-      <DropdownMenu>
-        <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper-1/'}><DropdownItem><NavLink href="/whitepaper-1" >Whitepaper 1 </NavLink></DropdownItem></div>
-        <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper-2/'}><DropdownItem><NavLink href="/whitepaper-2" >Whitepaper 2 </NavLink></DropdownItem></div>
-        <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper-3/'}><DropdownItem><NavLink href="/whitepaper-3" >Whitepaper 3 </NavLink></DropdownItem></div>
-        <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper-4/'}><DropdownItem><NavLink href="/whitepaper-4" >Whitepaper 4 </NavLink></DropdownItem></div>
-      </DropdownMenu>
-    </Dropdown>
-    <NavItem><NavLink href="/terms"       ><span class="nav-item fw-700" class:active={path==='/terms/'}> Terms</span></NavLink></NavItem>
-  </Nav>
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/manual" class:active={path==='/manual/'}> Manual</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" >Whitepapers</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-1/'} href="/whitepaper-1">Whitepaper 1</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-2/'} href="/whitepaper-2">Whitepaper 2</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-3/'} href="/whitepaper-3">Whitepaper 3</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-4/'} href="/whitepaper-4">Whitepaper 4</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/terms" class:active={path==='/terms/'}> Terms</a>
+      </li>
+    </ul>
   </div>
 
   <div class="navigation breakpoint-2">
 
-    <Nav>
-       <Dropdown nav isOpen={isOpenBurger} toggle={() => (isOpenBurger = !isOpenBurger)}>
-        <DropdownToggle nav>
-          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M28.3335 9.9165L5.66683 9.9165" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M28.3335 17L5.66683 17" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M28.3335 24.0835L5.66683 24.0835" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-        </DropdownToggle>
-        <DropdownMenu dropleft>
-          <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper-1/'}><DropdownItem><NavLink href="/whitepaper-1" >Whitepaper 1 </NavLink></DropdownItem></div>
-          <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper-2/'}><DropdownItem><NavLink href="/whitepaper-2" >Whitepaper 2 </NavLink></DropdownItem></div>
-          <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper-3/'}><DropdownItem><NavLink href="/whitepaper-3" >Whitepaper 3 </NavLink></DropdownItem></div>
-          <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper-4/'}><DropdownItem><NavLink href="/whitepaper-4" >Whitepaper 4 </NavLink></DropdownItem></div>
-          <div class="nav-dropdown-item" class:active-dropdown-item={path==='/manual/'}><DropdownItem><NavLink href="manual" >Manual </NavLink></DropdownItem></div>
-          <div class="nav-dropdown-item" class:active-dropdown-item={path==='/terms/'}><DropdownItem><NavLink href="/terms" >Terms </NavLink></DropdownItem></div>
-        </DropdownMenu>
-      </Dropdown>
-    </Nav>
+<!--    <Nav>-->
+<!--      <Dropdown nav isOpen={isOpenBurger} toggle={() => (isOpenBurger = !isOpenBurger)}>-->
+<!--        <DropdownToggle nav>-->
+<!--          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--            <path d="M28.3335 9.9165L5.66683 9.9165" stroke="black" stroke-width="1.5" stroke-linecap="round"/>-->
+<!--            <path d="M28.3335 17L5.66683 17" stroke="black" stroke-width="1.5" stroke-linecap="round"/>-->
+<!--            <path d="M28.3335 24.0835L5.66683 24.0835" stroke="black" stroke-width="1.5" stroke-linecap="round"/>-->
+<!--          </svg>-->
+<!--        </DropdownToggle>-->
+<!--        <DropdownMenu dropleft>-->
+<!--          <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper-1/'}><DropdownItem><NavLink href="/whitepaper-1" >Whitepaper 1 </NavLink></DropdownItem></div>-->
+<!--          <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper-2/'}><DropdownItem><NavLink href="/whitepaper-2" >Whitepaper 2 </NavLink></DropdownItem></div>-->
+<!--          <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper-3/'}><DropdownItem><NavLink href="/whitepaper-3" >Whitepaper 3 </NavLink></DropdownItem></div>-->
+<!--          <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper-4/'}><DropdownItem><NavLink href="/whitepaper-4" >Whitepaper 4 </NavLink></DropdownItem></div>-->
+<!--          <div class="nav-dropdown-item" class:active-dropdown-item={path==='/manual/'}><DropdownItem><NavLink href="manual" >Manual </NavLink></DropdownItem></div>-->
+<!--          <div class="nav-dropdown-item" class:active-dropdown-item={path==='/terms/'}><DropdownItem><NavLink href="/terms" >Terms </NavLink></DropdownItem></div>-->
+<!--        </DropdownMenu>-->
+<!--      </Dropdown>-->
+<!--    </Nav>-->
   </div>
 
 
@@ -257,27 +257,27 @@
         font-size: 20px;
     }
 
-    .nav-item, .nav-dropdown-item{
+    .nav-item, .dropdown-item{
         font-size: 20px;
         color: #000000;
         line-height: 15px
     }
 
-    .navigation .nav-item:hover {
-        border-bottom: 6px solid #DCDCDC;
+    .navigation .nav-link:hover {
+        box-shadow: inset 0 -6px 0 #DCDCDC;
     }
 
-    .navigation .nav-dropdown-item:hover {
-       background:  #DCDCDC;
+    .navigation .dropdown-item:hover {
+        background:  #DCDCDC;
     }
-
 
     .navigation {
         font-size: 20px;
+        font-weight: 700;
     }
 
     .navigation .active {
-        border-bottom: 6px solid #E8AF55;
+        box-shadow: inset 0 -6px 0 #E8AF55;
     }
 
     .navigation .active-dropdown-item {
@@ -295,6 +295,29 @@
     .breakpoint-2{
         display: none;
     }
+
+    .dropdown-item:active {
+        background: #DCDCDC;
+    }
+
+    .dropdown-item{
+        font-weight: 700;
+        padding: 5px 0;
+    }
+
+    .dropdown-menu{
+        padding: 0;
+        border: 2px solid #DCDCDC;
+        border-radius: 0;
+        margin-top: 3px;
+    }
+    .dropdown-toggle:after { content: none }
+
+    .breakpoint-2 .dropdown-menu{
+        right: -50px!important;
+        left: unset;
+    }
+
 
     @media only screen and (max-width: 1200px) {
         .breakpoint-2{
