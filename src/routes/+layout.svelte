@@ -262,8 +262,9 @@
         line-height: 15px
     }
 
-    .navigation .nav-link:hover {
+    .navigation .nav-link:hover{
         box-shadow: inset 0 -6px 0 #DCDCDC;
+        background: none;
     }
 
     .navigation .dropdown-item:hover {

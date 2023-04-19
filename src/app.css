@@ -18,6 +18,10 @@ a {
     text-decoration: none !important;
 }
 
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background: none;
+}
+
 .pdf-container {
     width: calc(100vw - 5px);
     height: calc(100vh - 100px);
