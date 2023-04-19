@@ -291,7 +291,7 @@
         display: flex;
         flex-direction: column;
         font-size: 20px;
-        transition: 0.4s;
+        transition: opacity 0.4s linear;
         opacity: 1;
     }
 
