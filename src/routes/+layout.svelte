@@ -270,10 +270,12 @@
 
     .content-tall {
         margin-top: 180px;
+        transition: 0.4s;
     }
 
     .content-short {
         margin-top: 70px;
+        transition: 0.4s;
     }
 
     .navigation a {
