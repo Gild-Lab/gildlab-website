@@ -32,3 +32,9 @@ a {
     border: 2px solid #DCDCDC;
     border-radius: 0;
 }
+
+.breakpoint-2 .dropdown-menu{
+    right: -50px!important;
+    left: unset;
+}
+

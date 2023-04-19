@@ -33,6 +33,7 @@
     }
 
     let isOpen = false;
+    let isOpenBurger = false;
 </script>
 {#if ($navOpen)}
   <div class="overlay"></div>
@@ -85,7 +86,7 @@
     <span class="fw-700">Welcome to Gild Lab</span>
     <span>We are a software provider for ESG assets.</span>
   </div>
-  <div class="navigation">
+  <div class="navigation breakpoint-1">
 
   <Nav>
     <NavItem><NavLink href="/manual"      ><span class="nav-item fw-700" class:active={path==='/manual/'}> Manual</span></NavLink></NavItem>
@@ -100,6 +101,29 @@
     </Dropdown>
     <NavItem><NavLink href="/terms"       ><span class="nav-item fw-700" class:active={path==='/terms/'}> Terms</span></NavLink></NavItem>
   </Nav>
+  </div>
+
+  <div class="navigation breakpoint-2">
+
+    <Nav>
+       <Dropdown nav isOpen={isOpenBurger} toggle={() => (isOpenBurger = !isOpenBurger)}>
+        <DropdownToggle nav>
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M28.3335 9.9165L5.66683 9.9165" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M28.3335 17L5.66683 17" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M28.3335 24.0835L5.66683 24.0835" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        </DropdownToggle>
+        <DropdownMenu dropleft>
+          <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper-1/'}><DropdownItem><NavLink href="/whitepaper-1" >Whitepaper 1 </NavLink></DropdownItem></div>
+          <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper-2/'}><DropdownItem><NavLink href="/whitepaper-2" >Whitepaper 2 </NavLink></DropdownItem></div>
+          <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper-3/'}><DropdownItem><NavLink href="/whitepaper-3" >Whitepaper 3 </NavLink></DropdownItem></div>
+          <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper-4/'}><DropdownItem><NavLink href="/whitepaper-4" >Whitepaper 4 </NavLink></DropdownItem></div>
+          <div class="nav-dropdown-item" class:active-dropdown-item={path==='/manual/'}><DropdownItem><NavLink href="manual" >Manual </NavLink></DropdownItem></div>
+          <div class="nav-dropdown-item" class:active-dropdown-item={path==='/terms/'}><DropdownItem><NavLink href="/terms" >Terms </NavLink></DropdownItem></div>
+        </DropdownMenu>
+      </Dropdown>
+    </Nav>
   </div>
 
 
@@ -265,6 +289,18 @@
         display: none;
     }
 
+    .breakpoint-2{
+        display: none;
+    }
+
+    @media only screen and (max-width: 1200px) {
+        .breakpoint-2{
+            display: flex;
+        }
+        .breakpoint-1{
+            display: none;
+        }
+    }
     @media only screen and (max-width: 600px) {
 
         .burger {
