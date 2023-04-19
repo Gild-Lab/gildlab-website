@@ -1,10 +1,28 @@
 <script xmlns="http://www.w3.org/1999/html">
     import image from "../assets/image.svg"
+    import {onMount} from "svelte";
+
+    let endOfImage = false
+
+    onMount(() => {
+        let html = document.documentElement;
+        window.onscroll = function (e) {
+            let abstract = document.getElementById("abstract")
+            let scroll = document.getElementById("scroll")
+            let abstractPosition = abstract.offsetTop + abstract.offsetHeight
+            let scrollPosition = scroll.offsetTop + scroll.offsetHeight
+            scroll.style.bottom = 160 - html.scrollTop + "px"
+            endOfImage = abstractPosition < scrollPosition;
+            if (endOfImage && html.scrollTop > 160) {
+                scroll.style.bottom = "-1px"
+            }
+        }
+    })
 </script>
 <div class="content">
   <div class="main-image">
-    <img src={image} alt="gild lab"/>
-    <div class="scroll">
+    <img src={image} alt="gild lab" id="abstract"/>
+    <div class={endOfImage ? "scroll  bottom-end": "scroll"} id="scroll">
       <svg width="174" height="51" viewBox="0 0 174 51" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="174" height="50.0637" fill="white"/>
         <rect x="5" y="5.32617" width="163.772" height="39.3683" fill="black"/>
@@ -304,7 +322,9 @@
     }
 
     .main-image img {
+        display: block;
         width: 100%;
+        height: auto;
     }
 
     .main-image {
@@ -314,8 +334,9 @@
 
     .scroll {
         position: absolute;
-        right: 6rem;
-        bottom: 16.5rem;
+        width: 95%;
+        text-align: right;
+        bottom: 16rem;
     }
 
     .segment {
