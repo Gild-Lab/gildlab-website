@@ -34,11 +34,15 @@
 
     let isOpen = false;
     let isOpenBurger = false;
+    let isPdfOpen = false;
+
+    $: path && (isPdfOpen = path === "/")
+
 </script>
 {#if ($navOpen)}
   <div class="overlay"></div>
 {/if}
-<div class="header">
+<div class={isPdfOpen? "header" : "header pt-2 pb-2" }>
   <div class="logo">
     <a class="" href="/">
       <svg width="174" viewBox="0 0 174 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -82,14 +86,13 @@
       </svg>
     </a>
   </div>
-  <div class="header-text">
+  <div  class={isPdfOpen? "header-text" : "d-none" }>
     <span class="fw-700">Welcome to Gild Lab</span>
     <span>We are a software provider for ESG assets.</span>
   </div>
   <div class="navigation breakpoint-1">
-
   <Nav>
-    <NavItem><NavLink href="/manual"      ><span class="nav-item fw-700" class:active={path==='/manual/'}> Manual</span></NavLink></NavItem>
+    <NavItem><NavLink href="/manual"><span class="nav-item fw-700" class:active={path==='/manual/'}> Manual</span></NavLink></NavItem>
     <Dropdown nav {isOpen} toggle={() => (isOpen = !isOpen)}>
       <DropdownToggle nav><span class="nav-item fw-700">Whitepapers</span></DropdownToggle>
       <DropdownMenu>
