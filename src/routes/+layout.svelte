@@ -37,9 +37,13 @@
     $: path && (isPdfOpen = path !== "/")
     onMount(() => {
         let html = document.documentElement;
-        window.onscroll = function (e) {
-            scrolled = html.scrollTop > 0;
-
+        window.onscroll = function () {
+            scrolled = html.scrollTop > 10;
+            if (isPdfOpen || scrolled) {
+                document.getElementById('header-text').style.opacity = '0'
+            } else {
+                document.getElementById('header-text').style.opacity = '1'
+            }
         }
     })
 
@@ -91,7 +95,7 @@
       </svg>
     </a>
   </div>
-  <div class={isPdfOpen || scrolled? "d-none" : "header-text" }>
+  <div class="header-text" id="header-text">
     <span class="fw-700">Welcome to Gild Lab</span>
     <span>We are a software provider for ESG assets.</span>
   </div>
@@ -130,10 +134,14 @@
           </svg>
         </a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-1/'} href="/whitepaper-1">Whitepaper 1</a>
-          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-2/'} href="/whitepaper-2">Whitepaper 2</a>
-          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-3/'} href="/whitepaper-3">Whitepaper 3</a>
-          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-4/'} href="/whitepaper-4">Whitepaper 4</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-1/'} href="/whitepaper-1">Whitepaper
+            1</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-2/'} href="/whitepaper-2">Whitepaper
+            2</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-3/'} href="/whitepaper-3">Whitepaper
+            3</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-4/'} href="/whitepaper-4">Whitepaper
+            4</a>
           <a class="dropdown-item" href="/manual" class:active-dropdown-item={path==='/manual/'}> Manual</a>
           <a class="dropdown-item" href="/terms" class:active-dropdown-item={path==='/terms/'}> Terms</a>
         </div>
@@ -257,7 +265,7 @@
         width: 100%;
         background: #ffffff;
         z-index: 2;
-        transition: padding 1s ease;
+        transition: 0.4s;
     }
 
     .content-tall {
@@ -265,7 +273,7 @@
     }
 
     .content-short {
-        margin-top: 70px
+        margin-top: 70px;
     }
 
     .navigation a {
@@ -280,6 +288,7 @@
         display: flex;
         flex-direction: column;
         font-size: 20px;
+        transition: 0.4s;
     }
 
     .nav-item, .dropdown-item {
@@ -386,7 +395,7 @@
         }
 
         .header {
-            padding: 17px 33px!important;
+            padding: 17px 33px !important;
         }
 
         .nav-mobile {
