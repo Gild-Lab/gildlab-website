@@ -95,10 +95,13 @@
       </svg>
     </a>
   </div>
-  <div class="header-text" id="header-text">
-    <span class="fw-700">Welcome to Gild Lab</span>
-    <span>We are a software provider for ESG assets.</span>
-  </div>
+  {#if (!isPdfOpen)}
+    <div class="header-text" id="header-text">
+      <span class="fw-700">Welcome to Gild Lab</span>
+      <span>We are a software provider for ESG assets.</span>
+    </div>
+  {/if}
+
   <div class="navigation breakpoint-1">
     <ul class="nav">
       <li class="nav-item">
