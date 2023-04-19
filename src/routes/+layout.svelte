@@ -41,8 +41,10 @@
             scrolled = html.scrollTop > 10;
             if (isPdfOpen || scrolled) {
                 document.getElementById('header-text').style.opacity = '0'
+                document.getElementById('gildlab-logo').style.width = '70%'
             } else {
                 document.getElementById('header-text').style.opacity = '1'
+                document.getElementById('gildlab-logo').style.width = '100%'
             }
         }
     })
@@ -54,7 +56,7 @@
 <div class={isPdfOpen || scrolled? "header pt-2 pb-2" : "header" }>
   <div class="logo">
     <a class="" href="/">
-      <svg width="174" viewBox="0 0 174 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="174" viewBox="0 0 174 60" fill="none" xmlns="http://www.w3.org/2000/svg" id="gildlab-logo">
         <g clip-path="url(#clip0_748_33)">
           <path
               d="M95.4062 60C64.1838 60 32.9576 60 1.7352 60C0.142414 60 0.00374774 59.8601 0.00374774 58.264C0 39.4327 0 20.6051 0 1.77383C0 0.155069 0.157405 9.27015e-07 1.79517 9.27015e-07C64.2175 9.27015e-07 109.775 9.27015e-07 172.194 9.27015e-07C172.505 9.27015e-07 172.819 -0.0189098 173.123 0.026476C173.644 0.105901 173.959 0.419819 173.989 0.972013C174 1.20651 173.996 1.441 173.996 1.67549C173.996 20.5598 173.996 39.4402 173.996 58.3245C173.996 59.8411 173.846 59.9924 172.366 59.9924C141.091 59.9924 126.681 59.9924 95.4024 59.9924L95.4062 60ZM172.014 2.01967H1.9938V58.0257H172.014V2.01967Z"
@@ -278,6 +280,10 @@
 
     .content-short {
         margin-top: 70px;
+        transition: 0.4s;
+    }
+
+    #gildlab-logo{
         transition: 0.4s;
     }
 
