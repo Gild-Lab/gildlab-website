@@ -107,26 +107,25 @@
   </div>
 
   <div class="navigation breakpoint-2">
-
-<!--    <Nav>-->
-<!--      <Dropdown nav isOpen={isOpenBurger} toggle={() => (isOpenBurger = !isOpenBurger)}>-->
-<!--        <DropdownToggle nav>-->
-<!--          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">-->
-<!--            <path d="M28.3335 9.9165L5.66683 9.9165" stroke="black" stroke-width="1.5" stroke-linecap="round"/>-->
-<!--            <path d="M28.3335 17L5.66683 17" stroke="black" stroke-width="1.5" stroke-linecap="round"/>-->
-<!--            <path d="M28.3335 24.0835L5.66683 24.0835" stroke="black" stroke-width="1.5" stroke-linecap="round"/>-->
-<!--          </svg>-->
-<!--        </DropdownToggle>-->
-<!--        <DropdownMenu dropleft>-->
-<!--          <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper-1/'}><DropdownItem><NavLink href="/whitepaper-1" >Whitepaper 1 </NavLink></DropdownItem></div>-->
-<!--          <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper-2/'}><DropdownItem><NavLink href="/whitepaper-2" >Whitepaper 2 </NavLink></DropdownItem></div>-->
-<!--          <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper-3/'}><DropdownItem><NavLink href="/whitepaper-3" >Whitepaper 3 </NavLink></DropdownItem></div>-->
-<!--          <div class="nav-dropdown-item" class:active-dropdown-item={path==='/whitepaper-4/'}><DropdownItem><NavLink href="/whitepaper-4" >Whitepaper 4 </NavLink></DropdownItem></div>-->
-<!--          <div class="nav-dropdown-item" class:active-dropdown-item={path==='/manual/'}><DropdownItem><NavLink href="manual" >Manual </NavLink></DropdownItem></div>-->
-<!--          <div class="nav-dropdown-item" class:active-dropdown-item={path==='/terms/'}><DropdownItem><NavLink href="/terms" >Terms </NavLink></DropdownItem></div>-->
-<!--        </DropdownMenu>-->
-<!--      </Dropdown>-->
-<!--    </Nav>-->
+    <ul class="nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" >
+                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M28.3335 9.9165L5.66683 9.9165" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+                      <path d="M28.3335 17L5.66683 17" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+                      <path d="M28.3335 24.0835L5.66683 24.0835" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-1/'} href="/whitepaper-1">Whitepaper 1</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-2/'} href="/whitepaper-2">Whitepaper 2</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-3/'} href="/whitepaper-3">Whitepaper 3</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-4/'} href="/whitepaper-4">Whitepaper 4</a>
+          <a class="dropdown-item" href="/manual" class:active-dropdown-item={path==='/manual/'}> Manual</a>
+          <a class="dropdown-item" href="/terms" class:active-dropdown-item={path==='/terms/'}> Terms</a>
+        </div>
+      </li>
+    </ul>
   </div>
 
 
