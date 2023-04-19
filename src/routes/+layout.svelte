@@ -27,13 +27,18 @@
         firstWord = firstLetter + firstWord.slice(1)
         txtArr = txtArr.slice(1)
         txtArr.unshift(firstWord)
-        return (txtArr.join(' '))
+        return txtArr.join(' ').replace("-"," ")
     }
+
+    let isPdfOpen = false;
+
+    $: path && (isPdfOpen = path === "/")
+
 </script>
 {#if ($navOpen)}
   <div class="overlay"></div>
 {/if}
-<div class="header">
+<div class={isPdfOpen? "header" : "header pt-2 pb-2" }>
   <div class="logo">
     <a class="" href="/">
       <svg width="174" viewBox="0 0 174 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -77,20 +82,55 @@
       </svg>
     </a>
   </div>
-  <div class="header-text">
+  <div  class={isPdfOpen? "header-text" : "d-none" }>
     <span class="fw-700">Welcome to Gild Lab</span>
     <span>We are a software provider for ESG assets.</span>
   </div>
-  <div class="navigation">
-    <a class="nav-item fw-700" class:active={path==='/manual'} href="/manual">Manual</a>
-    <a class="nav-item fw-700" class:active={path==='/whitepaper1'} href="/whitepaper1">Whitepaper 1</a>
-    <a class="nav-item fw-700" class:active={path==='/whitepaper2'} href="/whitepaper2">Whitepaper 2</a>
-    <a class="nav-item fw-700" class:active={path==='/whitepaper3'} href="/whitepaper3">Whitepaper 3</a>
-    <a class="nav-item fw-700" class:active={path==='/whitepaper4'} href="/whitepaper4">Whitepaper 4</a>
-    <a class="nav-item fw-700" class:active={path==='/terms'} href="/terms">Terms</a>
+  <div class="navigation breakpoint-1">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/manual" class:active={path==='/manual/'}> Manual</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" >Whitepapers</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-1/'} href="/whitepaper-1">Whitepaper 1</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-2/'} href="/whitepaper-2">Whitepaper 2</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-3/'} href="/whitepaper-3">Whitepaper 3</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-4/'} href="/whitepaper-4">Whitepaper 4</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/terms" class:active={path==='/terms/'}> Terms</a>
+      </li>
+    </ul>
   </div>
+
+  <div class="navigation breakpoint-2">
+    <ul class="nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" >
+                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M28.3335 9.9165L5.66683 9.9165" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+                      <path d="M28.3335 17L5.66683 17" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+                      <path d="M28.3335 24.0835L5.66683 24.0835" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-1/'} href="/whitepaper-1">Whitepaper 1</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-2/'} href="/whitepaper-2">Whitepaper 2</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-3/'} href="/whitepaper-3">Whitepaper 3</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-4/'} href="/whitepaper-4">Whitepaper 4</a>
+          <a class="dropdown-item" href="/manual" class:active-dropdown-item={path==='/manual/'}> Manual</a>
+          <a class="dropdown-item" href="/terms" class:active-dropdown-item={path==='/terms/'}> Terms</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
   {#if !$navOpen}
-    <div class="location fw-700">{toSentenceCase(path.slice(1))}</div>
+    <div class="location fw-700">{toSentenceCase(path.slice(1,-1))}</div>
   {/if}
   <div class="burger">
     {#if !$navOpen}
@@ -161,10 +201,10 @@
         </div>
 
         <a class="nav-item fw-700" class:active={path==='/manual'} href="/manual">Manual</a>
-        <a class="nav-item fw-700" class:active={path==='/whitepaper1'} href="/whitepaper1">Whitepaper 1</a>
-        <a class="nav-item fw-700" class:active={path==='/whitepaper2'} href="/whitepaper2">Whitepaper 2</a>
-        <a class="nav-item fw-700" class:active={path==='/whitepaper3'} href="/whitepaper3">Whitepaper 3</a>
-        <a class="nav-item fw-700" class:active={path==='/whitepaper4'} href="/whitepaper4">Whitepaper 4</a>
+        <a class="nav-item fw-700" class:active={path==='/whitepaper-1'} href="/whitepaper-1">Whitepaper 1</a>
+        <a class="nav-item fw-700" class:active={path==='/whitepaper-2'} href="/whitepaper-2">Whitepaper 2</a>
+        <a class="nav-item fw-700" class:active={path==='/whitepaper-3'} href="/whitepaper-3">Whitepaper 3</a>
+        <a class="nav-item fw-700" class:active={path==='/whitepaper-4'} href="/whitepaper-4">Whitepaper 4</a>
         <a class="nav-item fw-700" class:active={path==='/terms'} href="/terms">Terms</a>
       </div>
     {/if}
@@ -216,16 +256,32 @@
         font-size: 20px;
     }
 
-    .nav-item {
-        font-size: 20px
+    .nav-item, .dropdown-item{
+        font-size: 20px;
+        color: #000000;
+        line-height: 15px
     }
 
-    .navigation .nav-item:hover {
-        border-bottom: 6px solid #DCDCDC;
+    .navigation .nav-link:hover{
+        box-shadow: inset 0 -6px 0 #DCDCDC;
+        background: none;
+    }
+
+    .navigation .dropdown-item:hover {
+        background:  #DCDCDC;
+    }
+
+    .navigation {
+        font-size: 20px;
+        font-weight: 700;
     }
 
     .navigation .active {
-        border-bottom: 6px solid #E8AF55;
+        box-shadow: inset 0 -6px 0 #E8AF55;
+    }
+
+    .navigation .active-dropdown-item {
+        background: #E8AF55;
     }
 
     .burger {
@@ -236,6 +292,41 @@
         display: none;
     }
 
+    .breakpoint-2{
+        display: none;
+    }
+
+    .dropdown-item:active {
+        background: #DCDCDC;
+    }
+
+    .dropdown-item{
+        font-weight: 700;
+        padding: 5px 0;
+    }
+
+    .dropdown-menu{
+        padding: 0;
+        border: 2px solid #DCDCDC;
+        border-radius: 0;
+        margin-top: 3px;
+    }
+    .dropdown-toggle:after { content: none }
+
+    .breakpoint-2 .dropdown-menu{
+        right: -50px!important;
+        left: unset;
+    }
+
+
+    @media only screen and (max-width: 1200px) {
+        .breakpoint-2{
+            display: flex;
+        }
+        .breakpoint-1{
+            display: none;
+        }
+    }
     @media only screen and (max-width: 600px) {
 
         .burger {
