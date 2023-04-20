@@ -3,6 +3,7 @@
     import {page} from '$app/stores';
     import {fade} from 'svelte/transition';
     import {navOpen} from "../store.js";
+    import {onMount} from "svelte";
 
     let path;
 
@@ -27,21 +28,29 @@
         firstWord = firstLetter + firstWord.slice(1)
         txtArr = txtArr.slice(1)
         txtArr.unshift(firstWord)
-        return txtArr.join(' ').replace("-"," ")
+        return txtArr.join(' ').replace("-", " ")
     }
 
     let isPdfOpen = false;
+    let scrolled = false;
 
-    $: path && (isPdfOpen = path === "/")
+    $: path && (isPdfOpen = path !== "/")
+    onMount(() => {
+        let html = document.documentElement;
+        window.onscroll = function () {
+            scrolled = html.scrollTop > 10;
+        }
+    })
 
 </script>
 {#if ($navOpen)}
   <div class="overlay"></div>
 {/if}
-<div class={isPdfOpen? "header" : "header pt-2 pb-2" }>
+<div class={isPdfOpen || scrolled? "header pt-3 pb-3" : "header" }>
   <div class="logo">
     <a class="" href="/">
-      <svg width="174" viewBox="0 0 174 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="174" viewBox="0 0 174 60" fill="none" xmlns="http://www.w3.org/2000/svg" id="gildlab-logo"
+           style={isPdfOpen || scrolled? 'width: 70%;' : 'width: 100%;'}>
         <g clip-path="url(#clip0_748_33)">
           <path
               d="M95.4062 60C64.1838 60 32.9576 60 1.7352 60C0.142414 60 0.00374774 59.8601 0.00374774 58.264C0 39.4327 0 20.6051 0 1.77383C0 0.155069 0.157405 9.27015e-07 1.79517 9.27015e-07C64.2175 9.27015e-07 109.775 9.27015e-07 172.194 9.27015e-07C172.505 9.27015e-07 172.819 -0.0189098 173.123 0.026476C173.644 0.105901 173.959 0.419819 173.989 0.972013C174 1.20651 173.996 1.441 173.996 1.67549C173.996 20.5598 173.996 39.4402 173.996 58.3245C173.996 59.8411 173.846 59.9924 172.366 59.9924C141.091 59.9924 126.681 59.9924 95.4024 59.9924L95.4062 60ZM172.014 2.01967H1.9938V58.0257H172.014V2.01967Z"
@@ -82,22 +91,27 @@
       </svg>
     </a>
   </div>
-  <div  class={isPdfOpen? "header-text" : "d-none" }>
+  <div class={isPdfOpen || scrolled? "header-text header-text-hidden": "header-text" } id="header-text">
     <span class="fw-700">Welcome to Gild Lab</span>
     <span>We are a software provider for ESG assets.</span>
   </div>
+
   <div class="navigation breakpoint-1">
     <ul class="nav">
       <li class="nav-item">
         <a class="nav-link" href="/manual" class:active={path==='/manual/'}> Manual</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" >Whitepapers</a>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">Whitepapers</a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-1/'} href="/whitepaper-1">Whitepaper 1</a>
-          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-2/'} href="/whitepaper-2">Whitepaper 2</a>
-          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-3/'} href="/whitepaper-3">Whitepaper 3</a>
-          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-4/'} href="/whitepaper-4">Whitepaper 4</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-1/'} href="/whitepaper-1">Whitepaper
+            1</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-2/'} href="/whitepaper-2">Whitepaper
+            2</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-3/'} href="/whitepaper-3">Whitepaper
+            3</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-4/'} href="/whitepaper-4">Whitepaper
+            4</a>
         </div>
       </li>
       <li class="nav-item">
@@ -109,18 +123,22 @@
   <div class="navigation breakpoint-2">
     <ul class="nav">
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" >
-                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M28.3335 9.9165L5.66683 9.9165" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
-                      <path d="M28.3335 17L5.66683 17" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
-                      <path d="M28.3335 24.0835L5.66683 24.0835" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
-                    </svg>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M28.3335 9.9165L5.66683 9.9165" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M28.3335 17L5.66683 17" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M28.3335 24.0835L5.66683 24.0835" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
         </a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-1/'} href="/whitepaper-1">Whitepaper 1</a>
-          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-2/'} href="/whitepaper-2">Whitepaper 2</a>
-          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-3/'} href="/whitepaper-3">Whitepaper 3</a>
-          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-4/'} href="/whitepaper-4">Whitepaper 4</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-1/'} href="/whitepaper-1">Whitepaper
+            1</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-2/'} href="/whitepaper-2">Whitepaper
+            2</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-3/'} href="/whitepaper-3">Whitepaper
+            3</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-4/'} href="/whitepaper-4">Whitepaper
+            4</a>
           <a class="dropdown-item" href="/manual" class:active-dropdown-item={path==='/manual/'}> Manual</a>
           <a class="dropdown-item" href="/terms" class:active-dropdown-item={path==='/terms/'}> Terms</a>
         </div>
@@ -130,7 +148,7 @@
 
 
   {#if !$navOpen}
-    <div class="location fw-700">{toSentenceCase(path.slice(1,-1))}</div>
+    <div class="location fw-700">{toSentenceCase(path.slice(1, -1))}</div>
   {/if}
   <div class="burger">
     {#if !$navOpen}
@@ -212,7 +230,7 @@
   </div>
 
 </div>
-<div class="content">
+<div class={ scrolled || isPdfOpen ? "content content-short" : "content content-tall" }>
   <slot></slot>
 </div>
 
@@ -239,7 +257,26 @@
         justify-content: space-between;
         align-items: center;
         padding: 60px;
-        position: relative;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: #ffffff;
+        z-index: 2;
+        transition: 0.2s;
+    }
+
+    .content-tall {
+        margin-top: 180px;
+        transition: 0.2s;
+    }
+
+    .content-short {
+        margin-top: 70px;
+        transition: 0.2s;
+    }
+
+    #gildlab-logo {
+        transition: 0.2s;
     }
 
     .navigation a {
@@ -254,21 +291,28 @@
         display: flex;
         flex-direction: column;
         font-size: 20px;
+        transition: opacity 0.2s linear;
+        opacity: 1;
     }
 
-    .nav-item, .dropdown-item{
+    .header-text-hidden {
+        opacity: 0;
+        transition: opacity 0.2s linear;
+    }
+
+    .nav-item, .dropdown-item {
         font-size: 20px;
         color: #000000;
         line-height: 15px
     }
 
-    .navigation .nav-link:hover{
+    .navigation .nav-link:hover {
         box-shadow: inset 0 -6px 0 #DCDCDC;
         background: none;
     }
 
     .navigation .dropdown-item:hover {
-        background:  #DCDCDC;
+        background: #DCDCDC;
     }
 
     .navigation {
@@ -292,7 +336,7 @@
         display: none;
     }
 
-    .breakpoint-2{
+    .breakpoint-2 {
         display: none;
     }
 
@@ -300,33 +344,38 @@
         background: #DCDCDC;
     }
 
-    .dropdown-item{
+    .dropdown-item {
         font-weight: 700;
         padding: 5px 0;
     }
 
-    .dropdown-menu{
+    .dropdown-menu {
         padding: 0;
         border: 2px solid #DCDCDC;
         border-radius: 0;
         margin-top: 3px;
     }
-    .dropdown-toggle:after { content: none }
 
-    .breakpoint-2 .dropdown-menu{
-        right: -50px!important;
+    .dropdown-toggle:after {
+        content: none
+    }
+
+    .breakpoint-2 .dropdown-menu {
+        right: -50px !important;
         left: unset;
     }
 
 
     @media only screen and (max-width: 1200px) {
-        .breakpoint-2{
+        .breakpoint-2 {
             display: flex;
         }
-        .breakpoint-1{
+
+        .breakpoint-1 {
             display: none;
         }
     }
+
     @media only screen and (max-width: 600px) {
 
         .burger {
@@ -335,6 +384,10 @@
 
         .header-text {
             display: none;
+        }
+
+        .content-tall {
+            margin-top: 70px;
         }
 
         .navigation {
@@ -351,7 +404,7 @@
         }
 
         .header {
-            padding: 17px 33px;
+            padding: 17px 33px !important;
         }
 
         .nav-mobile {
