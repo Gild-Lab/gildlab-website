@@ -1,34 +1,11 @@
 <script xmlns="http://www.w3.org/1999/html">
     import image from "../assets/image.svg"
-    import {onMount} from "svelte";
-
-    let endOfImage = false
-
-    onMount(() => {
-        let abstract = document.getElementById("abstract")
-        let scroll = document.getElementById("scroll")
-
-        let html = document.documentElement;
-        let initialPosition =  abstract.offsetTop + 2*abstract.offsetHeight/7
-        scroll.style.bottom = initialPosition  + "px"
-
-        window.onscroll = function () {
-            let abstractPosition = abstract.offsetTop + abstract.offsetHeight
-            let scrollPosition = scroll.offsetTop + scroll.offsetHeight
-            scroll.style.bottom = initialPosition - html.scrollTop + "px"
-
-            endOfImage = abstractPosition < scrollPosition;
-            if (endOfImage && html.scrollTop > initialPosition) {
-                scroll.style.bottom = "-1px"
-            }
-        }
-    })
 </script>
 <div class="content">
   <div class="main-image">
-    <img src={image} alt="gild lab" id="abstract"/>
-    <div class={endOfImage ? "scroll bottom-end": "scroll"} id="scroll">
-      <svg width="174" height="51" viewBox="0 0 174 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <img src={image} alt="gild lab" id="abstract"/>
+    <div class="scroll" id="scroll">
+      <svg width="174" height="51" viewBox="0 0 174 51" fill="none" xmlns="http://www.w3.org/2000/svg" >
         <rect width="174" height="50.0637" fill="white"/>
         <rect x="5" y="5.32617" width="163.772" height="39.3683" fill="black"/>
         <path
@@ -330,17 +307,23 @@
         display: block;
         width: 100%;
         height: auto;
+        visibility: hidden;
     }
 
     .main-image {
-        width: 100%;
         position: relative;
+        width: 100%;
+        height: auto;
+        background-repeat: no-repeat;
+        background-image: url("../assets/image.svg");
+        background-size: cover;
     }
 
     .scroll {
-        position: absolute;
+        position: sticky;
         width: 95%;
         text-align: right;
+        bottom: 15rem;
     }
 
     .segment {
@@ -461,11 +444,7 @@
     .bt-3 {
         border-top: 3px solid #000000
     }
-
-    .bl-3 {
-        border-left: 3px solid #000000
-    }
-
+    
     .bb-3 {
         border-bottom: 3px solid #000000
     }
