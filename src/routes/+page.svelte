@@ -1,10 +1,39 @@
 <script xmlns="http://www.w3.org/1999/html">
     import image from "../assets/image.svg"
+    import {onMount} from "svelte";
+
+    let endOfImage = false;
+    let y=1;
+
+    onMount(() => {
+        let abstract = document.getElementById("abstract")
+        let scroll = document.getElementById("scroll")
+        let initialPosition = abstract.offsetTop + Math.floor(2 * abstract.offsetHeight / 9)
+
+        window.onscroll = () => {
+
+            let abstractPosition = abstract.offsetTop + abstract.offsetHeight
+            let scrollPosition = scroll.offsetTop + scroll.offsetHeight
+            scroll.style.bottom = initialPosition - y + "px"
+            console.log(scroll.offsetHeight)
+
+            endOfImage = abstractPosition < scrollPosition;
+            if (endOfImage) {
+                scroll.style.bottom = scroll.offsetHeight + "px"
+            }
+            if(y<10){
+                scroll.style.bottom = abstract.offsetTop + Math.floor(abstract.offsetHeight / 9) + "px"
+
+            }
+        }
+    })
+
 </script>
+<svelte:window bind:scrollY={y}/>
 <div class="content">
   <div class="main-image">
-    <img src={image} alt="gild lab"/>
-    <div class="scroll">
+    <img src={image} alt="gild lab" id="abstract"/>
+    <div class="scroll" id="scroll">
       <svg width="174" height="51" viewBox="0 0 174 51" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="174" height="50.0637" fill="white"/>
         <rect x="5" y="5.32617" width="163.772" height="39.3683" fill="black"/>
@@ -308,14 +337,17 @@
     }
 
     .main-image {
+        display: block;
         width: 100%;
-        position: relative;
+        height: auto;
     }
 
     .scroll {
         position: absolute;
-        right: 6rem;
-        bottom: 16.5rem;
+        width: 95%;
+        text-align: right;
+        transition: 0.2s;
+        bottom: 16rem;
     }
 
     .segment {
