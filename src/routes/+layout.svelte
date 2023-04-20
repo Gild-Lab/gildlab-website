@@ -35,16 +35,16 @@
     let scrolled = false;
 
     $: path && (isPdfOpen = path !== "/")
-    onMount(() => {
-        let html = document.documentElement;
-        window.onscroll = function () {
-            scrolled = html.scrollTop > 10;
-        }
-    })
+
+    let y;
+
+    $: y && (scrolled = y>10)
 
 </script>
+<svelte:window bind:scrollY={y}/>
+
 {#if ($navOpen)}
-  <div class="overlay"></div>
+  <div className="overlay"></div>
 {/if}
 <div class={isPdfOpen || scrolled? "header pt-3 pb-3" : "header" }>
   <div class="logo">
