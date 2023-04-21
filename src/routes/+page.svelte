@@ -6,9 +6,9 @@
 </script>
 <div class="content">
   <div class="main-image">
-    <img src={image} alt="gild lab"/>
-    <div class="scroll">
-      <svg width="174" height="51" viewBox="0 0 174 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <img src={image} alt="gild lab" id="abstract"/>
+    <div class="scroll" id="scroll">
+      <svg width="174" height="51" viewBox="0 0 174 51" fill="none" xmlns="http://www.w3.org/2000/svg" >
         <rect width="174" height="50.0637" fill="white"/>
         <rect x="5" y="5.32617" width="163.772" height="39.3683" fill="black"/>
         <path
@@ -143,18 +143,27 @@
     }
 
     .main-image img {
+        display: block;
         width: 100%;
+        height: auto;
+        visibility: hidden;
     }
 
     .main-image {
-        width: 100%;
         position: relative;
+        width: 100%;
+        height: auto;
+        background-repeat: no-repeat;
+        background-image: url("../assets/image.svg");
+        background-size: cover;
+        box-shadow: inset 0 -1px 0 #ffffff;
     }
 
     .scroll {
-        position: absolute;
-        right: 6rem;
-        bottom: 16.5rem;
+        position: sticky;
+        width: 95%;
+        text-align: right;
+        bottom: 15rem;
     }
 
     .segment {
