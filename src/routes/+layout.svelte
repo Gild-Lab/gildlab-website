@@ -3,7 +3,6 @@
     import {page} from '$app/stores';
     import {fade} from 'svelte/transition';
     import {navOpen} from "../store.js";
-    import {onMount} from "svelte";
 
     let path;
 
@@ -261,21 +260,21 @@
         width: 100%;
         background: #ffffff;
         z-index: 2;
-        transition: 0.2s;
+        transition: 0.3s;
     }
 
     .content-tall {
         margin-top: 180px;
-        transition: 0.2s;
+        transition: 0.5s;
     }
 
     .content-short {
         margin-top: 70px;
-        transition: 0.2s;
+        transition: 0.5s;
     }
 
     #gildlab-logo {
-        transition: 0.2s;
+        transition: 0.3s;
     }
 
     .navigation a {
@@ -290,13 +289,13 @@
         display: flex;
         flex-direction: column;
         font-size: 20px;
-        transition: opacity 0.2s linear;
+        transition: opacity 0.3s linear;
         opacity: 1;
     }
 
     .header-text-hidden {
         opacity: 0;
-        transition: opacity 0.2s linear;
+        transition: opacity 0.3s linear;
     }
 
     .nav-item, .dropdown-item {
