@@ -156,6 +156,7 @@
         background-repeat: no-repeat;
         background-image: url("../assets/image.svg");
         background-size: cover;
+        box-shadow: inset 0 -1px 0 #ffffff;
     }
 
     .scroll {
