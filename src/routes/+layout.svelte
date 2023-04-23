@@ -1,5 +1,6 @@
 <script>
-    import "../app.css";
+    import "../../static/app.css";
+
     import {page} from '$app/stores';
     import {fade} from 'svelte/transition';
     import {navOpen} from "../store.js";
@@ -32,7 +33,7 @@
 
 </script>
 <svelte:head>
-  <link rel="stylesheet" href="../app.css"/>
+  <link rel="stylesheet" href="/app.css"/>
 </svelte:head>
 
 {#if ($navOpen)}
