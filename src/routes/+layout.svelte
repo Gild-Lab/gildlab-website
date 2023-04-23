@@ -6,6 +6,7 @@
     import {onMount} from "svelte";
 
     onMount(() => {
+        console.log(12121)
 
         // alternative to DOMContentLoaded
         document.documentElement.className = "js"
