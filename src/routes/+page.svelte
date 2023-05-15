@@ -43,7 +43,7 @@
           <li>Two extra setups of the infrastructure above to create system resiliency with redundancy</li>
         </ul>
 
-        <p><span class="fw-700">Email </span><a href = "mailto: David@gildlab.xyz"><span class="fw-700 underline">David@gildlab.xyz</span></a> if you would like
+        <p><span class="fw-700">Email </span><a href = "mailto: david@gildlab.xyz"><span class="fw-700 underline">david@gildlab.xyz</span></a> if you would like
           to
           become a customer of Gild
           Lab.
@@ -74,7 +74,7 @@
           linked in baskets.
         </p>
         <p>
-          <span class="fw-700">Email </span><a href = "mailto: David@gildlab.xyz"><span class="fw-700 underline">David@gildlab.xyz</span></a> if you would like to
+          <span class="fw-700">Email </span><a href = "mailto: david@gildlab.xyz"><span class="fw-700 underline">david@gildlab.xyz</span></a> if you would like to
           use
           the Semi-Fungible
           System.
@@ -118,7 +118,7 @@
     <div class="contact segment">
       <span class="fw-700 title">Contact Gild Labs.</span>
       <div class="text">
-        <p><span class="fw-700">Email <a href = "mailto: David@gildlab.xyz"><span class="fw-700 underline">David@gildlab.xyz</span></a></span>
+        <p><span class="fw-700">Email <a href = "mailto: david@gildlab.xyz"><span class="fw-700 underline">david@gildlab.xyz</span></a></span>
         </p>
         <p>
           <span class="fw-700">Business address</span>
