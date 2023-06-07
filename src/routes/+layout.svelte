@@ -280,6 +280,8 @@
 
     #gildlab-logo {
         transition: 0.3s;
+        width: 174px;
+        height: 60px;
     }
 
     .navigation a {
