@@ -6,9 +6,9 @@
 </script>
 <div class="content">
   <div class="main-image">
-      <img src={image} alt="gild lab" id="abstract"/>
+    <img src={image} alt="gild lab" id="abstract"/>
     <div class="scroll" id="scroll">
-      <svg width="174" height="51" viewBox="0 0 174 51" fill="none" xmlns="http://www.w3.org/2000/svg" >
+      <svg width="174" height="51" viewBox="0 0 174 51" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="174" height="50.0637" fill="white"/>
         <rect x="5" y="5.32617" width="163.772" height="39.3683" fill="black"/>
         <path
@@ -43,7 +43,8 @@
           <li>Two extra setups of the infrastructure above to create system resiliency with redundancy</li>
         </ul>
 
-        <p><span class="fw-700">Email </span> David at <span class="fw-700"> gildlab.xyz</span> if you would like to
+        <p><span class="fw-700">Email </span><a href = "mailto: david@gildlab.xyz"><span class="fw-700 underline">david@gildlab.xyz</span></a> if you would like
+          to
           become a customer of Gild
           Lab.
         </p>
@@ -73,7 +74,8 @@
           linked in baskets.
         </p>
         <p>
-          <span class="fw-700">Email </span> David at <span class="fw-700"> gildlab.xyz</span> if you would like to use
+          <span class="fw-700">Email </span><a href = "mailto: david@gildlab.xyz"><span class="fw-700 underline">david@gildlab.xyz</span></a> if you would like to
+          use
           the Semi-Fungible
           System.
         </p>
@@ -116,7 +118,7 @@
     <div class="contact segment">
       <span class="fw-700 title">Contact Gild Labs.</span>
       <div class="text">
-        <p><span class="fw-700">Email</span> david at gildlab.xyz
+        <p><span class="fw-700">Email <a href = "mailto: david@gildlab.xyz"><span class="fw-700 underline">david@gildlab.xyz</span></a></span>
         </p>
         <p>
           <span class="fw-700">Business address</span>
@@ -211,23 +213,27 @@
         margin-top: 5rem;
     }
 
-    .diagram-desktop{
+    .diagram-desktop {
         display: block;
         width: 100%;
-        min-width:900px;
+        min-width: 900px;
         max-width: 1400px;
     }
 
-    .diagram-breakpoint2, .diagram-mobile{
+    .diagram-breakpoint2, .diagram-mobile {
         display: none;
     }
 
+    .underline {
+        text-decoration: underline;
+    }
+
     @media only screen and (max-width: 1200px) {
-        .diagram-mobile, .diagram-desktop{
+        .diagram-mobile, .diagram-desktop {
             display: none;
         }
 
-        .diagram-breakpoint2{
+        .diagram-breakpoint2 {
             display: block;
             min-width: 500px;
             max-width: 700px;
@@ -287,11 +293,11 @@
             background-color: #ffffff;
         }
 
-        .diagram-breakpoint2, .diagram-desktop{
+        .diagram-breakpoint2, .diagram-desktop {
             display: none;
         }
 
-        .diagram-mobile{
+        .diagram-mobile {
             display: block;
             width: 362px;
         }

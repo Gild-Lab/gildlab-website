@@ -240,6 +240,11 @@
         cursor: pointer;
     }
 
+    .logo {
+        width: 174px;
+        height: 60px;
+    }
+
     .header {
         display: flex;
         justify-content: space-between;
