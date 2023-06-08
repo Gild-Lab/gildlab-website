@@ -201,12 +201,6 @@
         transition: 0.5s;
     }
 
-    #gildlab-logo {
-        transition: 0.3s;
-        width: 174px;
-        height: 60px;
-    }
-
     .navigation a {
         padding-left: 15px;
         padding-right: 15px;
