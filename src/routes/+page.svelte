@@ -6,7 +6,9 @@
 </script>
 <div class="content">
   <div class="main-image">
-    <img src={image} alt="gild lab" id="abstract"/>
+    <div class="image-container">
+      <img src={image} alt="gild lab" id="abstract"/>
+    </div>
     <div class="scroll" id="scroll">
       <svg width="174" height="51" viewBox="0 0 174 51" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="174" height="50.0637" fill="white"/>
@@ -43,7 +45,8 @@
           <li>Two extra setups of the infrastructure above to create system resiliency with redundancy</li>
         </ul>
 
-        <p><span class="fw-700">Email </span><a href = "mailto: david@gildlab.xyz"><span class="fw-700 underline">david@gildlab.xyz</span></a> if you would like
+        <p><span class="fw-700">Email </span><a href="mailto: david@gildlab.xyz"><span class="fw-700 underline">david@gildlab.xyz</span></a>
+          if you would like
           to
           become a customer of Gild
           Lab.
@@ -74,7 +77,8 @@
           linked in baskets.
         </p>
         <p>
-          <span class="fw-700">Email </span><a href = "mailto: david@gildlab.xyz"><span class="fw-700 underline">david@gildlab.xyz</span></a> if you would like to
+          <span class="fw-700">Email </span><a href="mailto: david@gildlab.xyz"><span class="fw-700 underline">david@gildlab.xyz</span></a>
+          if you would like to
           use
           the Semi-Fungible
           System.
@@ -118,7 +122,7 @@
     <div class="contact segment">
       <span class="fw-700 title">Contact Gild Labs.</span>
       <div class="text">
-        <p><span class="fw-700">Email <a href = "mailto: david@gildlab.xyz"><span class="fw-700 underline">david@gildlab.xyz</span></a></span>
+        <p><span class="fw-700">Email <a href="mailto: david@gildlab.xyz"><span class="fw-700 underline">david@gildlab.xyz</span></a></span>
         </p>
         <p>
           <span class="fw-700">Business address</span>
@@ -149,6 +153,11 @@
         width: 100%;
         height: auto;
         visibility: hidden;
+    }
+
+    .image-container {
+        max-height: 850px;
+        min-height: 550px;
     }
 
     .main-image {
@@ -233,6 +242,11 @@
             display: none;
         }
 
+        .image-container {
+            max-height: 550px;
+            min-height: 250px;
+        }
+
         .diagram-breakpoint2 {
             display: block;
             min-width: 500px;
@@ -271,6 +285,11 @@
             padding-bottom: 4rem;
         }
 
+        .image-container {
+            max-height: revert;
+            min-height: revert;
+            height: auto;
+        }
         .title {
             font-size: 20px;
         }
