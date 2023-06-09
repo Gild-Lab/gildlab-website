@@ -48,7 +48,7 @@
 <div class={isPdfOpen || scrolled? "header pt-3 pb-3" : "header" }>
   <div class="logo">
     <a class="" href="/">
-      <img src={gildlab_logo} alt="gildlab"/>
+      <img src={gildlab_logo} alt="gildlab" loading="lazy"/>
     </a>
   </div>
   <div class={isPdfOpen || scrolled? "header-text header-text-hidden": "header-text" } id="header-text">

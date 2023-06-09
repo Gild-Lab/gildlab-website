@@ -7,7 +7,7 @@
 <div class="content">
   <div class="main-image">
     <div class="image-container">
-      <img src={image} alt="gild lab" id="abstract"/>
+      <img src={image} alt="gild lab" id="abstract" loading="lazy"/>
     </div>
     <div class="scroll" id="scroll">
       <svg width="174" height="51" viewBox="0 0 174 51" fill="none" xmlns="http://www.w3.org/2000/svg">
