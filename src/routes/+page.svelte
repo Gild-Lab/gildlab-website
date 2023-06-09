@@ -22,12 +22,11 @@
   </div>
   <div class="info">
     <div class="what-we-do segment">
-      <span class="fw-700 title"> What we do </span>
+      <div class="fw-700 title"> What we do</div>
       <div class="text">
         <p>
           Our vision is to bring real world assets on chain in a liquid, transparent, decentralised way
         </p>
-
         <p>Our focus is asset tokenisation and real world asset liquidity solutions
         </p>
         <p>Our tokenisation solutions are free and open source
@@ -40,30 +39,28 @@
           <li>Run an IPFS node</li>
           <li>Index the Ethereum blockchain to create a blockchain subgraph</li>
           <li>Watch changes to the blockchain subgraph and create IPFS pins to make resources available and</li>
-          <li>Two extra setups of the infrastructure above to create system resiliency with redundancy</li>
+          <li>Two extra setups of the infrastructure above to create system resiliency with redundancy.</li>
         </ul>
 
-        <p><span class="fw-700">Email </span><a href = "mailto: david@gildlab.xyz"><span class="fw-700 underline">david@gildlab.xyz</span></a> if you would like
-          to
-          become a customer of Gild
-          Lab.
+        <p><span class="fw-700">Email </span><a href="mailto: david@gildlab.xyz"><span class="fw-700 underline">david@gildlab.xyz</span></a>
+          if you would like to become a customer of Gild Lab.
         </p>
       </div>
     </div>
     <div class="how-does-it-work segment">
-      <span class="fw-700 title">How does it work? </span>
+      <div class="fw-700 title">How does it work?</div>
       <div class="chart">
         <img src={diagramDesktop} alt="diagram" class="diagram-desktop">
         <img src={diagramBreakpoint2} alt="diagram" class="diagram-breakpoint2">
         <img src={diagramMobile} alt="diagram" class="diagram-mobile">
       </div>
       <div class="text">
-        <p>If a public transparent layer was added to companies, accountability would trend.
-        </p>
-        <p>
-          The underlying asset e.g. a particular warehouse is represented with a Non-Fungible Token.
-          A common property across all underlying assets e.g. income from all warehouses is represented with a Fungible
-          Token, because it is shared.
+<!--        <p>If a public transparent layer was added to companies, accountability would trend.-->
+<!--        </p>-->
+        <p class="mt-5">
+          The underlying asset e.g. a particular warehouse is represented with a Non-Fungible Token. A common property
+          across all underlying assets e.g. income from all warehouses is represented with a Fungible Token, because it
+          is shared.
         </p>
         <p>
           Asset holders receive the Non-Fungible Token and sell the Fungible Token; retail, institutional investors buy
@@ -74,15 +71,13 @@
           linked in baskets.
         </p>
         <p>
-          <span class="fw-700">Email </span><a href = "mailto: david@gildlab.xyz"><span class="fw-700 underline">david@gildlab.xyz</span></a> if you would like to
-          use
-          the Semi-Fungible
-          System.
+          <span class="fw-700">Email </span><a href="mailto: david@gildlab.xyz"><span class="fw-700 underline">david@gildlab.xyz</span></a>if
+          you would like to use the Semi-Fungible System.
         </p>
       </div>
     </div>
     <div class="tokenisation segment">
-      <span class="fw-700 title">Tokenisation Products</span>
+      <div class="fw-700 title">Tokenisation Products</div>
       <div class="text">
         <p>ETHg is a hybrid erc20 and erc1155 that mints/burns at a reference gold price from Chainlink oracles,
           denominated in ETH. The erc20 is called ETHGild with symbol ETHg. It works much like wrapping/unwrapping ETH
@@ -116,9 +111,9 @@
       </div>
     </div>
     <div class="contact segment">
-      <span class="fw-700 title">Contact Gild Labs.</span>
+      <div class="fw-700 title">Contact Gild Labs.</div>
       <div class="text">
-        <p><span class="fw-700">Email <a href = "mailto: david@gildlab.xyz"><span class="fw-700 underline">david@gildlab.xyz</span></a></span>
+        <p><span class="fw-700">Email <a href="mailto: david@gildlab.xyz"><span class="fw-700 underline">david@gildlab.xyz</span></a></span>
         </p>
         <p>
           <span class="fw-700">Business address</span>
@@ -197,12 +192,20 @@
     .title {
         font-family: 'Courier', sans-serif;
         font-size: 30px;
+        margin-bottom: 6rem;
     }
 
     .text {
         font-family: 'Noto Sans JP', sans-serif;
         font-size: 20px;
-        margin-top: 40px;
+    }
+
+    .text p {
+        margin-bottom: 4rem;
+    }
+
+    .text ul {
+        margin-bottom: 6rem;
     }
 
 
@@ -226,6 +229,18 @@
 
     .underline {
         text-decoration: underline;
+    }
+
+    ul {
+        margin-left: 1rem;
+    }
+
+    ul li::marker {
+        font-size: 14px;
+    }
+
+    ul li {
+        list-style-position: outside;
     }
 
     @media only screen and (max-width: 1200px) {
