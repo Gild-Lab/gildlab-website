@@ -4,15 +4,6 @@
     import {fade} from 'svelte/transition';
     import {navOpen} from "../store.js";
     import gildlab_logo from "../assets/gildlab_logo.svg"
-    import {onMount} from "svelte";
-
-    let loaded = false
-
-    onMount(() => {
-        window.onload = function () { // can also use window.addEventListener('load', (event) => {
-            loaded = true
-        };
-    })
 
     let path;
 
@@ -52,118 +43,116 @@
 </script>
 
 <svelte:window bind:scrollY={y}/>
-<div class={loaded? 'hidden': 'block'}>
-  {#if ($navOpen)}
-    <div class="overlay"></div>
-  {/if}
-  <div class={isPdfOpen || scrolled? "header pt-3 pb-3" : "header" }>
-    <div class="logo">
-      <a class="" href="/">
-        <img src={gildlab_logo} alt="gildlab" loading="lazy"/>
-      </a>
-    </div>
-    <div class={isPdfOpen || scrolled? "header-text header-text-hidden": "header-text" } id="header-text">
-      <span class="fw-700">Welcome to Gild Lab</span>
-      <span>We are a software provider for ESG assets.</span>
-    </div>
+{#if ($navOpen)}
+  <div class="overlay"></div>
+{/if}
+<div class={isPdfOpen || scrolled? "header pt-3 pb-3" : "header" }>
+  <div class="logo">
+    <a class="" href="/">
+      <img src={gildlab_logo} alt="gildlab" loading="lazy"/>
+    </a>
+  </div>
+  <div class={isPdfOpen || scrolled? "header-text header-text-hidden": "header-text" } id="header-text">
+    <span class="fw-700">Welcome to Gild Lab</span>
+    <span>We are a software provider for ESG assets.</span>
+  </div>
 
-    <div class="navigation breakpoint-1">
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link" href="/manual" class:active={path==='/manual/'}> Manual</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">Whitepapers</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-1/'} href="/whitepaper-1">Whitepaper
-              1</a>
-            <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-2/'} href="/whitepaper-2">Whitepaper
-              2</a>
-            <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-3/'} href="/whitepaper-3">Whitepaper
-              3</a>
-            <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-4/'} href="/whitepaper-4">Whitepaper
-              4</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/terms" class:active={path==='/terms/'}> Terms</a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="navigation breakpoint-2">
-      <ul class="nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">
-            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M28.3335 9.9165L5.66683 9.9165" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M28.3335 17L5.66683 17" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M28.3335 24.0835L5.66683 24.0835" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-1/'} href="/whitepaper-1">Whitepaper
-              1</a>
-            <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-2/'} href="/whitepaper-2">Whitepaper
-              2</a>
-            <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-3/'} href="/whitepaper-3">Whitepaper
-              3</a>
-            <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-4/'} href="/whitepaper-4">Whitepaper
-              4</a>
-            <a class="dropdown-item" href="/manual" class:active-dropdown-item={path==='/manual/'}> Manual</a>
-            <a class="dropdown-item" href="/terms" class:active-dropdown-item={path==='/terms/'}> Terms</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-
-    {#if !$navOpen}
-      <div class="location fw-700">{toSentenceCase(path.slice(1, -1))}</div>
-    {/if}
-    <div class="burger">
-      {#if !$navOpen}
-        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg"
-             on:click={()=>{openNav()}}>
-          <path d="M28.3335 9.9165L5.66683 9.9165" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M28.3335 17L5.66683 17" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M28.3335 24.0835L5.66683 24.0835" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      {/if}
-
-      {#if $navOpen}
-
-        <div class="nav-mobile" in:fade={{duration : 150}} out:fade={{duration : 150}}>
-          <div class="logo-and-close">
-            <div class="logo-mobile">
-              <img src={gildlab_logo} alt="gildlab"/>
-            </div>
-            <div class="close-menu">
-              <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg"
-                   on:click={()=>{closeNav()}}>
-                <path d="M11.3335 11.3335L22.6668 22.6668" stroke="black" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round"/>
-                <path d="M22.6665 11.3335L11.3332 22.6668" stroke="black" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round"/>
-              </svg>
-            </div>
-          </div>
-
-          <a class="nav-item fw-700" class:active={path==='/manual'} href="/manual">Manual</a>
-          <a class="nav-item fw-700" class:active={path==='/whitepaper-1'} href="/whitepaper-1">Whitepaper 1</a>
-          <a class="nav-item fw-700" class:active={path==='/whitepaper-2'} href="/whitepaper-2">Whitepaper 2</a>
-          <a class="nav-item fw-700" class:active={path==='/whitepaper-3'} href="/whitepaper-3">Whitepaper 3</a>
-          <a class="nav-item fw-700" class:active={path==='/whitepaper-4'} href="/whitepaper-4">Whitepaper 4</a>
-          <a class="nav-item fw-700" class:active={path==='/terms'} href="/terms">Terms</a>
+  <div class="navigation breakpoint-1">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/manual" class:active={path==='/manual/'}> Manual</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">Whitepapers</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-1/'} href="/whitepaper-1">Whitepaper
+            1</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-2/'} href="/whitepaper-2">Whitepaper
+            2</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-3/'} href="/whitepaper-3">Whitepaper
+            3</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-4/'} href="/whitepaper-4">Whitepaper
+            4</a>
         </div>
-      {/if}
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/terms" class:active={path==='/terms/'}> Terms</a>
+      </li>
+    </ul>
+  </div>
 
-    </div>
+  <div class="navigation breakpoint-2">
+    <ul class="nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M28.3335 9.9165L5.66683 9.9165" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M28.3335 17L5.66683 17" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M28.3335 24.0835L5.66683 24.0835" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-1/'} href="/whitepaper-1">Whitepaper
+            1</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-2/'} href="/whitepaper-2">Whitepaper
+            2</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-3/'} href="/whitepaper-3">Whitepaper
+            3</a>
+          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-4/'} href="/whitepaper-4">Whitepaper
+            4</a>
+          <a class="dropdown-item" href="/manual" class:active-dropdown-item={path==='/manual/'}> Manual</a>
+          <a class="dropdown-item" href="/terms" class:active-dropdown-item={path==='/terms/'}> Terms</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+  {#if !$navOpen}
+    <div class="location fw-700">{toSentenceCase(path.slice(1, -1))}</div>
+  {/if}
+  <div class="burger">
+    {#if !$navOpen}
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg"
+           on:click={()=>{openNav()}}>
+        <path d="M28.3335 9.9165L5.66683 9.9165" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M28.3335 17L5.66683 17" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M28.3335 24.0835L5.66683 24.0835" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    {/if}
+
+    {#if $navOpen}
+
+      <div class="nav-mobile" in:fade={{duration : 150}} out:fade={{duration : 150}}>
+        <div class="logo-and-close">
+          <div class="logo-mobile">
+            <img src={gildlab_logo} alt="gildlab"/>
+          </div>
+          <div class="close-menu">
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg"
+                 on:click={()=>{closeNav()}}>
+              <path d="M11.3335 11.3335L22.6668 22.6668" stroke="black" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"/>
+              <path d="M22.6665 11.3335L11.3332 22.6668" stroke="black" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <a class="nav-item fw-700" class:active={path==='/manual'} href="/manual">Manual</a>
+        <a class="nav-item fw-700" class:active={path==='/whitepaper-1'} href="/whitepaper-1">Whitepaper 1</a>
+        <a class="nav-item fw-700" class:active={path==='/whitepaper-2'} href="/whitepaper-2">Whitepaper 2</a>
+        <a class="nav-item fw-700" class:active={path==='/whitepaper-3'} href="/whitepaper-3">Whitepaper 3</a>
+        <a class="nav-item fw-700" class:active={path==='/whitepaper-4'} href="/whitepaper-4">Whitepaper 4</a>
+        <a class="nav-item fw-700" class:active={path==='/terms'} href="/terms">Terms</a>
+      </div>
+    {/if}
 
   </div>
-  <div class={ scrolled || isPdfOpen ? "content content-short" : "content content-tall" }>
-    <slot></slot>
-  </div>
+
+</div>
+<div class={ scrolled || isPdfOpen ? "content content-short" : "content content-tall" }>
+  <slot></slot>
 </div>
 
 <style lang="css" global>
