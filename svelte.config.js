@@ -3,6 +3,9 @@ import { vitePreprocess } from '@sveltejs/kit/vite';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
+	compilerOptions: {
+		enableSourcemap: true
+	},
 	kit: {
 		adapter: adapter({
 			// default options are shown. On some platforms
@@ -14,7 +17,11 @@ const config = {
 			strict: true,
 		})
 	},
-	preprocess: vitePreprocess()
+	preprocess: vitePreprocess(),
+	vite: {
+		css: {
+			devSourcemap: true
+		}
+	}
 };
-
 export default config;

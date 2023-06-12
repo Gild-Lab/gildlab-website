@@ -6,7 +6,9 @@
 </script>
 <div class="content">
   <div class="main-image">
-    <img src={image} alt="gild lab" id="abstract"/>
+    <div class="image-container">
+      <img src={image} alt="gild lab" id="abstract" loading="lazy"/>
+    </div>
     <div class="scroll" id="scroll">
       <svg width="174" height="51" viewBox="0 0 174 51" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="174" height="50.0637" fill="white"/>
@@ -146,6 +148,11 @@
         visibility: hidden;
     }
 
+    .image-container {
+        max-height: 850px;
+        min-height: 550px;
+    }
+
     .main-image {
         position: relative;
         width: 100%;
@@ -248,6 +255,11 @@
             display: none;
         }
 
+        .image-container {
+            max-height: 550px;
+            min-height: 250px;
+        }
+
         .diagram-breakpoint2 {
             display: block;
             min-width: 500px;
@@ -286,6 +298,11 @@
             padding-bottom: 4rem;
         }
 
+        .image-container {
+            max-height: revert;
+            min-height: revert;
+            height: auto;
+        }
         .title {
             font-size: 20px;
         }
