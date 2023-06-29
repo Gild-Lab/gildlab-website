@@ -50,10 +50,13 @@
   <!-- Dropdown menu -->
   <div id="dropdown" class="absolute top-10 drop-menu" class:hidden={dropdownHidden} bind:this={dropdown}>
     <ul class="dropdown-items" aria-labelledby="dropdownDefaultButton">
-      {#each items as item}
+      {#each items as item, i}
         <li class="list-item cursor-pointer" class:active={path===item.path} on:click={()=>handleNavItemClick()}>
           <a href={item.path}>{item.label}</a>
         </li>
+        {#if item.break && i !== items.length - 1}
+          <hr/>
+        {/if}
       {/each}
     </ul>
   </div>
@@ -99,7 +102,7 @@
     }
 
     .list-item {
-        padding: 0 15px 0 13px !important;
+        padding: 0 15px 0 13px;
         display: flex;
         align-items: center;
     }
@@ -112,6 +115,12 @@
         background-color: #DCDCDC;
     }
 
+    hr {
+        width: 90%;
+        color: #D2D2D2;
+        margin-left: 5%;
+    }
+
     @media only screen and (max-width: 1200px) {
         .dropdown:hover {
             box-shadow: none;
@@ -119,6 +128,8 @@
 
         .dropdown-items {
             right: 15px;
+            top: 10rem;
+            border-top: 2px solid #DCDCDC;
         }
     }
 

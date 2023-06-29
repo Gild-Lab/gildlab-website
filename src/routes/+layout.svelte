@@ -39,12 +39,12 @@
         {path: "/whitepaper-2/", label: "Whitepaper 2"},
         {path: "/whitepaper-3/", label: "Whitepaper 3"},
         {path: "/whitepaper-4/", label: "Whitepaper 4"},
-        {path: "/making-money/", label: "Making money with ETHg"},
+        {path: "/making-money/", label: "Making money with ETHg", break: true},
     ]
 
     let allNavItems = [
         ...whitePapers,
-        {path: "/manual/", label: "Manual"},
+        {path: "/manual/", label: "Manual",  break: true},
         {path: "/terms/", label: "Terms"},
         {path: "/brand-kit/", label: "Brand kit"},
     ]
