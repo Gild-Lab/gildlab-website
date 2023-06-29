@@ -1,5 +1,6 @@
 <script>
-    export let triggerLabel;
+    export let triggerLabel = "";
+    export let triggerIcon;
     export let items;
     export let path;
 
@@ -40,7 +41,10 @@
 </script>
 <div class="dropdown-container" on:click_outside={handleClickOutside} use:clickOutside>
   <div data-dropdown-toggle="dropdown" on:click={()=>toggleDropdown()}
-          class="dropdown bg-white" type="button">
+       class="dropdown bg-white" type="button">
+    {#if triggerIcon}
+      <img src={triggerIcon} alt="icon"/>
+    {/if}
     <span>{triggerLabel}</span>
   </div>
   <!-- Dropdown menu -->
@@ -48,7 +52,7 @@
     <ul class="dropdown-items" aria-labelledby="dropdownDefaultButton">
       {#each items as item}
         <li class="list-item cursor-pointer" class:active={path===item.path} on:click={()=>handleNavItemClick()}>
-          <a   href={item.path}>{item.label}</a>
+          <a href={item.path}>{item.label}</a>
         </li>
       {/each}
     </ul>
@@ -57,10 +61,11 @@
 
 <style>
 
-    .dropdown-container, .dropdown{
+    .dropdown-container, .dropdown {
         height: 100%;
     }
-    .dropdown:hover{
+
+    .dropdown:hover {
         box-shadow: inset 0 -6px 0 #DCDCDC;
         background: none;
     }
@@ -74,6 +79,11 @@
 
     .dropdown:focus {
         outline: none;
+    }
+
+    .dropdown img {
+        height: 34px;
+        width: 34px;
     }
 
     .dropdown-items {
@@ -101,5 +111,16 @@
     .list-item:hover {
         background-color: #DCDCDC;
     }
+
+    @media only screen and (max-width: 1200px) {
+        .dropdown:hover {
+            box-shadow: none;
+        }
+
+        .dropdown-items {
+            right: 15px;
+        }
+    }
+
 
 </style>

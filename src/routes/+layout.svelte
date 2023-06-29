@@ -5,6 +5,8 @@
     import {navOpen} from "../store.js";
     import gildlab_logo from "../assets/gildlab_logo.svg"
     import Dropdown from "../components/Dropdown.svelte";
+    import burger from "../assets/burger.svg"
+
 
     let path;
 
@@ -32,22 +34,23 @@
         return txtArr.join(' ').replace("-", " ")
     }
 
-    let scrolled = false;
-
-    let y;
-
-    $: y && (scrolled = y > 10)
-
     let whitePapers = [
         {path: "/whitepaper-1/", label: "Whitepaper 1"},
         {path: "/whitepaper-2/", label: "Whitepaper 2"},
         {path: "/whitepaper-3/", label: "Whitepaper 3"},
         {path: "/whitepaper-4/", label: "Whitepaper 4"},
+        {path: "/making-money/", label: "Making money with ETHg"},
+    ]
+
+    let allNavItems = [
+        ...whitePapers,
+        {path: "/manual/", label: "Manual"},
+        {path: "/terms/", label: "Terms"},
+        {path: "/brand-kit/", label: "Brand kit"},
     ]
 
 </script>
 
-<svelte:window bind:scrollY={y}/>
 {#if ($navOpen)}
   <div class="overlay"></div>
 {/if}
@@ -73,29 +76,7 @@
   </div>
 
   <div class="navigation breakpoint-2">
-    <ul class="nav">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">
-          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M28.3335 9.9165L5.66683 9.9165" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M28.3335 17L5.66683 17" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M28.3335 24.0835L5.66683 24.0835" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-1/'} href="/whitepaper-1">Whitepaper
-            1</a>
-          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-2/'} href="/whitepaper-2">Whitepaper
-            2</a>
-          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-3/'} href="/whitepaper-3">Whitepaper
-            3</a>
-          <a class="dropdown-item" class:active-dropdown-item={path==='/whitepaper-4/'} href="/whitepaper-4">Whitepaper
-            4</a>
-          <a class="dropdown-item" href="/manual" class:active-dropdown-item={path==='/manual/'}> Manual</a>
-          <a class="dropdown-item" href="/terms" class:active-dropdown-item={path==='/terms/'}> Terms</a>
-        </div>
-      </li>
-    </ul>
+    <Dropdown items={allNavItems} {path} triggerIcon="{burger}"/>
   </div>
 
 
@@ -199,8 +180,7 @@
         color: #000000;
     }
 
-
-    .nav-item, .dropdown-item {
+    .nav-item{
         font-size: 20px;
         color: #000000;
         margin-left: 25px;
@@ -212,10 +192,6 @@
         background: none;
     }
 
-    .navigation .dropdown-item:hover {
-        background: #DCDCDC;
-    }
-
     .navigation {
         font-size: 20px;
         font-weight: 700;
@@ -223,10 +199,6 @@
 
     .navigation .nav-item.active {
         box-shadow: inset 0 -6px 0 #E8AF55;
-    }
-
-    .navigation .active-dropdown-item {
-        background: #E8AF55;
     }
 
     .burger {
@@ -239,31 +211,6 @@
 
     .breakpoint-2 {
         display: none;
-    }
-
-    .dropdown-item:active {
-        background: #DCDCDC;
-    }
-
-    .dropdown-item {
-        font-weight: 700;
-        padding: 5px 0;
-    }
-
-    .dropdown-menu {
-        padding: 0;
-        border: 2px solid #DCDCDC;
-        border-radius: 0;
-        margin-top: 3px;
-    }
-
-    .dropdown-toggle:after {
-        content: none
-    }
-
-    .breakpoint-2 .dropdown-menu {
-        right: -50px !important;
-        left: unset;
     }
 
 
