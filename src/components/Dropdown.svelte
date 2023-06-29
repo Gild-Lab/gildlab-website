@@ -84,11 +84,6 @@
         outline: none;
     }
 
-    .dropdown img {
-        height: 34px;
-        width: 34px;
-    }
-
     .dropdown-items {
         position: absolute;
         background: #ffffff;

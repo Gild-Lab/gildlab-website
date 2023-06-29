@@ -44,7 +44,7 @@
 
     let allNavItems = [
         ...whitePapers,
-        {path: "/manual/", label: "Manual",  break: true},
+        {path: "/manual/", label: "Manual", break: true},
         {path: "/terms/", label: "Terms"},
         {path: "/brand-kit/", label: "Brand kit"},
     ]
@@ -97,9 +97,7 @@
 
       <div class="nav-mobile" in:fade={{duration : 150}} out:fade={{duration : 150}}>
         <div class="logo-and-close">
-          <div class="logo-mobile">
-            <img src={gildlab_logo} alt="gildlab"/>
-          </div>
+          <img src={gildlab_logo} alt="gildlab" class="logo"/>
           <div class="close-menu">
             <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg"
                  on:click={()=>{closeNav()}}>
@@ -116,7 +114,9 @@
         <a class="nav-item fw-700" class:active={path==='/whitepaper-2'} href="/whitepaper-2">Whitepaper 2</a>
         <a class="nav-item fw-700" class:active={path==='/whitepaper-3'} href="/whitepaper-3">Whitepaper 3</a>
         <a class="nav-item fw-700" class:active={path==='/whitepaper-4'} href="/whitepaper-4">Whitepaper 4</a>
+        <a class="nav-item fw-700" class:active={path==='/making-money'} href="/making-money">Making money with ETHg</a>
         <a class="nav-item fw-700" class:active={path==='/terms'} href="/terms">Terms</a>
+        <a class="nav-item fw-700" class:active={path==='/brand-kit'} href="/brand-kit">Brand kit</a>
       </div>
     {/if}
 
@@ -180,7 +180,7 @@
         color: #000000;
     }
 
-    .nav-item{
+    .nav-item {
         font-size: 20px;
         color: #000000;
         margin-left: 25px;
@@ -234,17 +234,8 @@
             display: none;
         }
 
-
-        .logo svg {
-            width: 99px;
-        }
-
-        .logo-mobile svg {
-            width: 99px;
-        }
-
         .header {
-            padding: 17px 33px !important;
+            padding: 15px 33px !important;
         }
 
         .nav-mobile {
@@ -268,6 +259,9 @@
 
         .nav-mobile .nav-item {
             padding: 17px 20px 17px 33px;
+            font-size: 16px;
+            margin-left: 0;
+            margin-right: 0;
         }
 
 
@@ -278,7 +272,7 @@
 
         .logo-and-close {
             display: flex;
-            padding: 17px 20px 17px 33px;
+            padding: 15px 20px 15px 33px;
             justify-content: space-between;
         }
 
@@ -287,7 +281,7 @@
             font-family: 'Courier', sans-serif;
             font-style: normal;
             font-size: 16px;
-            line-height: 40px;
+            line-height: 34px;
         }
 
         .overlay {

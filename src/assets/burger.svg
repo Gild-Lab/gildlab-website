@@ -1,7 +1,5 @@
-<svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="Linear / Essentional, UI / Hamburger Menu">
-<path id="Vector" d="M46.6665 16.3335L9.33317 16.3335" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
-<path id="Vector_2" d="M46.6665 28L9.33317 28" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
-<path id="Vector_3" d="M46.6665 39.6665H9.33317" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
-</g>
+<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M28.3335 9.9165L5.66683 9.9165" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M28.3335 17L5.66683 17" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M28.3335 24.0835L5.66683 24.0835" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
 </svg>
