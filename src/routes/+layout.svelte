@@ -32,20 +32,17 @@
         return txtArr.join(' ').replace("-", " ")
     }
 
-    let isPdfOpen = false;
     let scrolled = false;
-
-    $: path && (isPdfOpen = path !== "/")
 
     let y;
 
     $: y && (scrolled = y > 10)
 
     let whitePapers = [
-        {path:"/whitepaper-1/", label:"Whitepaper 1"},
-        {path:"/whitepaper-2/", label:"Whitepaper 2"},
-        {path:"/whitepaper-3/", label:"Whitepaper 3"},
-        {path:"/whitepaper-4/", label:"Whitepaper 4"},
+        {path: "/whitepaper-1/", label: "Whitepaper 1"},
+        {path: "/whitepaper-2/", label: "Whitepaper 2"},
+        {path: "/whitepaper-3/", label: "Whitepaper 3"},
+        {path: "/whitepaper-4/", label: "Whitepaper 4"},
     ]
 
 </script>
@@ -54,27 +51,20 @@
 {#if ($navOpen)}
   <div class="overlay"></div>
 {/if}
-<div class={isPdfOpen || scrolled? "header pt-3 pb-3" : "header" }>
-  <div class="logo">
-    <a class="" href="/">
-      <img src={gildlab_logo} alt="gildlab" loading="lazy"/>
-    </a>
-  </div>
-  <div class={isPdfOpen || scrolled? "header-text header-text-hidden": "header-text" } id="header-text">
-    <span class="fw-700">Welcome to Gild Lab</span>
-    <span>We are a software provider for ESG assets.</span>
-  </div>
-
+<div class="header">
+  <a class="" href="/">
+    <img src={gildlab_logo} class="logo" alt="gildlab" loading="lazy"/>
+  </a>
   <div class="navigation breakpoint-1">
-    <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link" href="/manual" class:active={path==='/manual/'}> Manual</a>
+    <ul>
+      <li class="nav-item" class:active={path==='/manual/'}>
+        <a class="" href="/manual" > Manual</a>
       </li>
-      <li>
+      <li class="nav-item">
         <Dropdown items={whitePapers} triggerLabel="Whitepapers" {path}/>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/terms" class:active={path==='/terms/'}> Terms</a>
+      <li class="nav-item" class:active={path==='/terms/'}>
+        <a class="" href="/terms" > Terms</a>
       </li>
     </ul>
   </div>
@@ -149,7 +139,7 @@
   </div>
 
 </div>
-<div class={ scrolled || isPdfOpen ? "content content-short" : "content content-tall" }>
+<div class="content">
   <slot></slot>
 </div>
 
@@ -173,15 +163,15 @@
     }
 
     .logo {
-        width: 174px;
-        height: 60px;
+        width: 99px;
+        height: 34px;
     }
 
     .header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 60px;
+        padding: 15px 63px;
         position: fixed;
         top: 0;
         width: 100%;
@@ -190,44 +180,31 @@
         transition: 0.3s;
     }
 
-    .content-tall {
-        margin-top: 180px;
-        transition: 0.5s;
+    .content {
+        margin-top: 64px;
     }
 
-    .content-short {
-        margin-top: 70px;
-        transition: 0.5s;
+    .navigation ul{
+        display: flex;
+        list-style-type: none;
+        margin:0
     }
 
     .navigation a {
-        padding-left: 15px;
-        padding-right: 15px;
         text-decoration: none;
         line-height: 23px;
         color: #000000;
     }
 
-    .header-text {
-        display: flex;
-        flex-direction: column;
-        font-size: 20px;
-        transition: opacity 0.3s linear;
-        opacity: 1;
-    }
-
-    .header-text-hidden {
-        opacity: 0;
-        transition: opacity 0.3s linear;
-    }
 
     .nav-item, .dropdown-item {
         font-size: 20px;
         color: #000000;
-        line-height: 15px
+       margin-left: 25px;
+       margin-right: 25px;
     }
 
-    .navigation .nav-link:hover {
+    .navigation .nav-item:hover {
         box-shadow: inset 0 -6px 0 #DCDCDC;
         background: none;
     }
@@ -241,7 +218,7 @@
         font-weight: 700;
     }
 
-    .navigation .active {
+    .navigation .nav-item.active {
         box-shadow: inset 0 -6px 0 #E8AF55;
     }
 
@@ -301,14 +278,6 @@
 
         .burger {
             display: block;
-        }
-
-        .header-text {
-            display: none;
-        }
-
-        .content-tall {
-            margin-top: 70px;
         }
 
         .navigation {

@@ -6,6 +6,10 @@
     let dropdown;
     let dropdownHidden = true;
 
+    function handleNavItemClick() {
+        dropdownHidden = true
+    }
+
     function toggleDropdown() {
         dropdownHidden = !dropdownHidden
     }
@@ -35,16 +39,16 @@
 
 </script>
 <div class="dropdown-container" on:click_outside={handleClickOutside} use:clickOutside>
-  <button data-dropdown-toggle="dropdown" on:click={()=>toggleDropdown()}
+  <div data-dropdown-toggle="dropdown" on:click={()=>toggleDropdown()}
           class="dropdown bg-white" type="button">
     <span>{triggerLabel}</span>
-  </button>
+  </div>
   <!-- Dropdown menu -->
   <div id="dropdown" class="absolute top-10 drop-menu" class:hidden={dropdownHidden} bind:this={dropdown}>
     <ul class="dropdown-items" aria-labelledby="dropdownDefaultButton">
       {#each items as item}
-        <li class="list-item cursor-pointer" class:active={path===item.path}>
-          <a href={item.path}>{item.label}</a>
+        <li class="list-item cursor-pointer" class:active={path===item.path} on:click={()=>handleNavItemClick()}>
+          <a   href={item.path}>{item.label}</a>
         </li>
       {/each}
     </ul>
@@ -52,6 +56,14 @@
 </div>
 
 <style>
+
+    .dropdown-container, .dropdown{
+        height: 100%;
+    }
+    .dropdown:hover{
+        box-shadow: inset 0 -6px 0 #DCDCDC;
+        background: none;
+    }
 
     .dropdown {
         border: none;
@@ -70,7 +82,10 @@
         list-style-type: none;
         padding: 0;
         width: max-content;
-        top: 5.5rem;
+        top: 6.3rem;
+        border-bottom: 2px solid #DCDCDC;
+        border-left: 2px solid #DCDCDC;
+        border-right: 2px solid #DCDCDC;
     }
 
     .list-item {
