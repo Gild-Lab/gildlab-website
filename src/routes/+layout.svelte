@@ -58,13 +58,16 @@
   <div class="navigation breakpoint-1">
     <ul>
       <li class="nav-item" class:active={path==='/manual/'}>
-        <a class="" href="/manual" > Manual</a>
+        <a class="" href="/manual"> Manual</a>
       </li>
       <li class="nav-item">
         <Dropdown items={whitePapers} triggerLabel="Whitepapers" {path}/>
       </li>
       <li class="nav-item" class:active={path==='/terms/'}>
-        <a class="" href="/terms" > Terms</a>
+        <a class="" href="/terms"> Terms</a>
+      </li>
+      <li class="nav-item" class:active={path==='/brand-kit/'}>
+        <a class="" href="/brand-kit">Brand kit</a>
       </li>
     </ul>
   </div>
@@ -184,10 +187,10 @@
         margin-top: 64px;
     }
 
-    .navigation ul{
+    .navigation ul {
         display: flex;
         list-style-type: none;
-        margin:0
+        margin: 0
     }
 
     .navigation a {
@@ -200,8 +203,8 @@
     .nav-item, .dropdown-item {
         font-size: 20px;
         color: #000000;
-       margin-left: 25px;
-       margin-right: 25px;
+        margin-left: 25px;
+        margin-right: 25px;
     }
 
     .navigation .nav-item:hover {
