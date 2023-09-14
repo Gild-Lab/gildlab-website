@@ -27,11 +27,11 @@
       <div class="fw-700 title"> What we do</div>
       <div class="text">
         <p>
-          Our vision is to bring real world assets on chain in a liquid, transparent, decentralised way
+          Our vision is to bring real world assets on chain in a liquid, transparent, decentralised way.
         </p>
-        <p>Our focus is asset tokenisation and real world asset liquidity solutions
+        <p>Our focus is asset tokenisation and real world asset liquidity solutions.
         </p>
-        <p>Our tokenisation solutions are free and open source
+        <p>Our tokenisation solutions are free and open source.
         </p>
         <p>Our business model is hosting and infrastructure provider for the convenient use of these products. This
           includes the setup and creation of decentralised computing infrastructure in multiple countries to host a
