@@ -73,8 +73,8 @@
           linked in baskets.
         </p>
         <p>
-          <span class="fw-700">Email </span><a href="mailto: david@gildlab.xyz"><span class="fw-700 underline">david@gildlab.xyz</span></a>if
-          you would like to use the Semi-Fungible System.
+          <span class="fw-700">Email </span><a href="mailto: david@gildlab.xyz"><span class="fw-700 underline">david@gildlab.xyz</span></a>
+          if you would like to use the Semi-Fungible System.
         </p>
       </div>
     </div>
