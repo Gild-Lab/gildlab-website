@@ -8,7 +8,7 @@
     import burger from "../assets/burger.svg"
 
 
-    let path;
+    let path = '';
 
     $: path = $page.url.pathname;
 
@@ -44,7 +44,7 @@
 
     let allNavItems = [
         ...whitePapers,
-        {path: "/manual/", label: "Manual", break: true},
+        {path: "https://gildlab.document360.io/", label: "Manual", break: true},
         {path: "/terms/", label: "Terms"},
         {path: "/brand-kit/", label: "Brand kit"},
     ]
@@ -61,7 +61,7 @@
   <div class="navigation breakpoint-1">
     <ul>
       <li class="nav-item" class:active={path==='/manual/'}>
-        <a class="" href="/manual"> Manual</a>
+        <a class="" href="https://gildlab.document360.io/" target="_blank"> Manual</a>
       </li>
       <li class="nav-item">
         <Dropdown items={whitePapers} triggerLabel="Whitepapers" {path}/>
@@ -109,7 +109,7 @@
           </div>
         </div>
 
-        <a class="nav-item fw-700" class:active={path==='/manual'} href="/manual">Manual</a>
+        <a class="nav-item fw-700" class:active={path==='/manual'} href="https://gildlab.document360.io/" target="_blank">Manual</a>
         <a class="nav-item fw-700" class:active={path==='/whitepaper-1'} href="/whitepaper-1">Whitepaper 1</a>
         <a class="nav-item fw-700" class:active={path==='/whitepaper-2'} href="/whitepaper-2">Whitepaper 2</a>
         <a class="nav-item fw-700" class:active={path==='/whitepaper-3'} href="/whitepaper-3">Whitepaper 3</a>
